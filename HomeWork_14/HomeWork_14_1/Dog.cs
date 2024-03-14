@@ -18,14 +18,17 @@ namespace HomeWork_14_1
             set => base.Name = value;
         }
 
-        private protected override void ActivityStatus()
+        public override void ActivityStatus()
         {
             AnimalStatus = Status.Eat;
         }
 
-        private protected new void MakeSound()
+        public new void MakeSound()
         {
+            base.MakeSound();
             Console.WriteLine("Woof");
         }
+
+
     }
 }

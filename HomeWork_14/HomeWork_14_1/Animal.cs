@@ -33,12 +33,12 @@ namespace HomeWork_14_1
             AnimalStatus = status;
         }
 
-        private protected virtual void MakeSound()
+        public virtual void MakeSound()
         {
             Console.WriteLine("Animal say");
         }
 
-        private protected virtual void ActivityStatus()
+        public virtual void ActivityStatus()
         {
             Console.WriteLine($"Animal is {Status.Sleep}");
         }
