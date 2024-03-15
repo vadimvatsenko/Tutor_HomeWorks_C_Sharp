@@ -24,7 +24,8 @@ namespace HomeWork_14_1
         private protected Gender Gender { get; set;}
         private protected Status AnimalStatus {  get; set; }
 
-        private protected readonly static int minAge = 1; 
+        private protected readonly static int minAge = 1;
+        private protected const string type = "Animal";
 
         public Animal(string name, Gender gender, Status status)
         { 
