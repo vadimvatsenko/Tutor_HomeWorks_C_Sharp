@@ -12,6 +12,8 @@ namespace HomeWork_13_2_Virtual_Override
         {
         }
 
+
+
         public override void Draw()
         {
 

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HomeWork_10_8_1_Classes_Lib\HomeWork_10_8_1_Classes_Lib.csproj" />
+    <ProjectReference Include="..\HomeWork_10_8_1_Classes_Lib\HomeWork_10_08_01_Classes_Lib.csproj" />
   </ItemGroup>
 
 </Project>

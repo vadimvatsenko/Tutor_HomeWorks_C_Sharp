@@ -24,6 +24,7 @@ namespace HomeWork_14_1
         public override void ActivityStatus() // override - нужно компилироваться, потому он работает медленней чем new
         {
             AnimalStatus = Status.Eat;
+            Console.WriteLine("");
         }
 
         public new void MakeSound() // new вызывается сразу метод, без компиляции и перехода в базовый класс

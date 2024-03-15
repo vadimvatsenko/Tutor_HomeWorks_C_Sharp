@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 //Повторити малюнок. 
 //Для цього створити базовий клас Body, який має 7 параметрів. 
-	 
+
 //· height – цілочислений тип
 //· width - цілочислений тип
 //· y - число з плаваючою комою подвійної точності.
@@ -25,12 +25,14 @@ using System.Threading.Tasks;
 
 namespace HomeWork_13_2_Virtual_Override
 {
-    internal class Program
-    {
-        static void Main(string[] args)
+
+        internal class Program
         {
-            // Список и цикл; // объекты в список, потом перебор. Body - список
-            List<Body> bodyList = new List<Body>()
+            static void Main(string[] args)
+            {
+                //Список и цикл; // объекты в список, потом перебор. Body - список
+
+                List<Body> bodyList = new List<Body>()
             {
                 //(new Head(55, 1, ConsoleColor.Red, '-', 5)),
                 (new Head(55, 4, ConsoleColor.Red, '-', 4)),
@@ -41,10 +43,13 @@ namespace HomeWork_13_2_Virtual_Override
                 (new Foot(10, 10, 60, 21, ConsoleColor.Blue, '*', Side.Right)),
             };
 
-            foreach (Body body in bodyList)
-            {
-                body.Draw();
+                foreach (Body body in bodyList)
+                {
+                    body.Draw();
+                }
+
+                Console.SetCursorPosition(0, 0);
             }
         }
     }
-}
+

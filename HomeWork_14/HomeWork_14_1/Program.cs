@@ -15,8 +15,8 @@ namespace HomeWork_14_1
     {
         static void Main(string[] args)
         {
-            Dog dog = new Dog("Spike", Gender.Boy, Status.Walk);
-            dog.MakeSound();
+            Animal dog = new Dog("Spike", Gender.Boy, Status.Walk);
+            dog.ActivityStatus();
         }
     }
 }

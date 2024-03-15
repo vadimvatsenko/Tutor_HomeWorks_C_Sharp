@@ -28,6 +28,7 @@ namespace HomeWork_13_2_Virtual_Override
         }
 
         public Body(double x, double y, ConsoleColor color, char symbol, double r)
+
         {
             X = x;
             Y = y;
