@@ -26,25 +26,26 @@ namespace HomeWork_03_06_Arrays
                 numbs[i] = rnd.Next(1, 11);
             }
 
-            foreach(int i  in numbs)
-            {
-                Console.Write($"{i} ");
-            }
 
+            bool isFound = false;
             foreach (int i in numbs)
             {
                 if(i == enterNumb)
                 {
-                    Console.WriteLine($"число {enterNumb} = {i}");
-                    Console.WriteLine();
-                }
-/*                else if(i != enterNumb)
-                {
-                    Console.WriteLine($"Не равно");
-                    break;
-                }*/
+                    // Console.WriteLine($"число {enterNumb} = {i}");
+                    isFound = true;
+                } 
+               
             }
 
+            if(isFound)
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
 
         }
     }
