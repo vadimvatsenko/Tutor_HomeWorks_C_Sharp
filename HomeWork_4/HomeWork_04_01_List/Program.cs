@@ -22,13 +22,28 @@ namespace HomeWork_04_01_List
                 numb.Add(rnd.Next(1, 20));
             }
 
-            int MinValue = 0;
-            int MaxValue = 0;
+            foreach(int  num in numb)
+            {
+                Console.WriteLine(num);
+            }
+
+            int MinValue = numb[0];
+            int MaxValue = numb[0];
 
             for (int i = 0; i < numb.Count; i++)
             {
-                
+                if(MinValue > numb[i])
+                {
+                    MinValue = numb[i];
+                }
+                if (MaxValue < numb[i])
+                {
+                    MaxValue = numb[i];
+                }
             }
+
+            Console.WriteLine($"min {MinValue}");
+            Console.WriteLine($"max {MaxValue}");
         }
     }
 }
