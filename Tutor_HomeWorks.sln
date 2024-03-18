@@ -87,17 +87,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Переменные и 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Циклы", "02-Циклы", "{200A1E87-E8CF-4034-AB90-A72CC256817A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Классы", "Классы", "{FF2DA459-3BD9-40D2-99FB-F9CFCC034A4C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10-Классы", "10-Классы", "{FF2DA459-3BD9-40D2-99FB-F9CFCC034A4C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Исключения", "Исключения", "{34AC18C6-5FB0-4B20-927C-A20A8AFE69E3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09-Исключения", "09-Исключения", "{34AC18C6-5FB0-4B20-927C-A20A8AFE69E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Инкапсуляция", "Инкапсуляция", "{17CE7D6E-2BB1-42DB-BFC0-E4A02B010FDF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11-Инкапсуляция", "11-Инкапсуляция", "{17CE7D6E-2BB1-42DB-BFC0-E4A02B010FDF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Наследование", "Наследование", "{6DA4359F-FDE6-49B5-A107-1D171DA174FF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-Наследование", "12-Наследование", "{6DA4359F-FDE6-49B5-A107-1D171DA174FF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Virtual and override", "Virtual and override", "{02457BC4-9C11-47B6-A17D-44B439F0839C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "13-Virtual and override", "13-Virtual and override", "{02457BC4-9C11-47B6-A17D-44B439F0839C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "New override", "New override", "{52813E32-66C2-441B-92C4-1141EEA29266}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14-New override", "14-New override", "{52813E32-66C2-441B-92C4-1141EEA29266}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_02_09_Cycles", "HomeWork_2\HomeWork_2_9_Cycles\HomeWork_02_09_Cycles.csproj", "{CAB526AC-573D-4E05-A01E-9E3BA1C8552C}"
 EndProject
@@ -140,6 +140,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_04_06_List", "HomeWork_4\HomeWork_04_06_List\HomeWork_04_06_List.csproj", "{3643C29B-BE82-4B12-AE25-D0CB04C6EC3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_04_07_List", "HomeWork_4\HomeWork_04_07_List\HomeWork_04_07_List.csproj", "{D73F3980-DB1F-4517-9436-1715EAD58752}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "15-Абстрактный класс", "15-Абстрактный класс", "{1D1D38ED-BCC3-43DC-8729-6ED06BC302CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_15_1_Abstract", "HomeWork_15_1_Abstract\HomeWork_15_1_Abstract.csproj", "{C8F01319-2128-48C1-8634-378781188550}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -383,6 +387,10 @@ Global
 		{D73F3980-DB1F-4517-9436-1715EAD58752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D73F3980-DB1F-4517-9436-1715EAD58752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D73F3980-DB1F-4517-9436-1715EAD58752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F01319-2128-48C1-8634-378781188550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F01319-2128-48C1-8634-378781188550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F01319-2128-48C1-8634-378781188550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F01319-2128-48C1-8634-378781188550}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -447,6 +455,7 @@ Global
 		{9D4FA730-6D28-4573-AB5D-EE32E0C3F640} = {66571078-D95A-4328-9A94-2E6566CDDB40}
 		{3643C29B-BE82-4B12-AE25-D0CB04C6EC3C} = {66571078-D95A-4328-9A94-2E6566CDDB40}
 		{D73F3980-DB1F-4517-9436-1715EAD58752} = {66571078-D95A-4328-9A94-2E6566CDDB40}
+		{C8F01319-2128-48C1-8634-378781188550} = {1D1D38ED-BCC3-43DC-8729-6ED06BC302CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98A17070-E902-44A9-8052-5A7DFD53B7B0}
