@@ -11,6 +11,8 @@ namespace HomeWork_15_1_Abstract
         public double X; 
         public double Y;
 
+        // Console.ReadKey()
+
         public Vector2(double x, double y)
         {
             X = x;

@@ -17,10 +17,10 @@ namespace HomeWork_04_07_List
         {
             List<int> numb1 = new List<int>(6);
             List<int> numb2 = new List<int>(numb1.Count);
-
+            Console.WriteLine(numb1.Capacity);
             Random rnd = new Random();
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < numb1.Capacity; i++) // Capacity - ёмкость
             {
                 numb1.Add(rnd.Next(0, 101));
             }

@@ -20,10 +20,34 @@ namespace HomeWork_15_1_Abstract
             Console.BackgroundColor = Color;
 
             int startX = (int)Position.X;
-            int startY = (int)Position.X;
+            int startY = (int)Position.Y;
 
             Console.SetCursorPosition(startX, startY);
 
+            double step = 1.0 / R;
+
+            for (double i = 0; i <= Math.PI / 2; i += step)
+            {
+                int x = (int)Math.Round(R * Math.Cos(i));
+                int y = (int)Math.Round(R * Math.Sin(i));
+
+                Console.SetCursorPosition(startX + x, startY + y);
+                Console.Write(' ');
+                Console.SetCursorPosition(startX + x, startY - y);
+                Console.Write(' ');
+                Console.SetCursorPosition(startX - x, startY + y);
+                Console.Write(' ');
+                Console.SetCursorPosition(startX - x, startY - y);
+                Console.Write(' ');
+                Console.SetCursorPosition(startX + y, startY + x);
+                Console.Write(' ');
+                Console.SetCursorPosition(startX + y, startY - x);
+                Console.Write(' ');
+                Console.SetCursorPosition(startX - y, startY + x);
+                Console.Write(' ');
+                Console.SetCursorPosition(startX - y, startY - x);
+                Console.Write(' ');
+            }
 
 
         }
@@ -36,22 +60,31 @@ namespace HomeWork_15_1_Abstract
             int startX = (int)Position.X;
             int startY = (int)Position.Y;
 
-            for (int y = -(int)R; y <= R; y++)
+            Console.SetCursorPosition(startX, startY);
+
+            double step = 1.0 / R;
+
+            for (double i = 0; i <= Math.PI / 2; i += step)
             {
-                for (int x = -(int)R; x <= R; x++)
+                int x = (int)Math.Round(R * Math.Cos(i));
+                int y = (int)Math.Round(R * Math.Sin(i));
+
+                
+                for (int j = startY - y; j <= startY + y; j++)
                 {
-                    double distance = Math.Sqrt(x * x + y * y);
-
-                    if (distance <= R)
-                    {
-                        Console.SetCursorPosition(startX + x, startY + y);
-                        Console.Write("1");
-
-                    }
+                    Console.SetCursorPosition(startX - x, j);
+                    Console.Write(' ');
+                    Console.SetCursorPosition(startX + x, j);
+                    Console.Write(' ');
                 }
-                    Console.WriteLine();
+
+                Console.SetCursorPosition(startX, startY + y);
+                Console.Write(' ');
+                Console.SetCursorPosition(startX, startY - y);
+                Console.Write(' ');
             }
         }
     }
 }
+
 

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HomeWork_15_1_Abstract
 {
-    internal class Rectangle : Shape
-    {
+   public class Rectangle : Shape
+   {
         public double Width { get; private set; }
         public double Height { get; private set; }
 
@@ -19,7 +19,7 @@ namespace HomeWork_15_1_Abstract
 
         public override void Draw()
         {
-
+            
             Console.ForegroundColor = Color;
             Console.BackgroundColor = Color;
 
@@ -28,23 +28,30 @@ namespace HomeWork_15_1_Abstract
 
             Console.SetCursorPosition(startX, startY);
 
-            for (int i = 0; i < Width; i++)
+            for (int i = 0; i < Width; i++) // верхняя полоска
             {
                 Console.SetCursorPosition(startX + i, startY);
                 Console.WriteLine(' ');
             }
 
-            for(int j = 0; j < Height; j++)
+            for (int j = 0; j < Height; j++) // левая полоска
             {
                 Console.SetCursorPosition(startX, startY + j);
                 Console.WriteLine(' ');
             }
 
-            for (int k = 0; k < Height; k++)
+            for (int k = 0; k < Height; k++) // правая полоска
             {
-                Console.SetCursorPosition(startX, startY + k);
+                Console.SetCursorPosition(startX + (int)Width - 1, startY + k);
                 Console.WriteLine(' ');
             }
+
+            for (int l = 0; l < Width; l++) // нижняя полоска
+            {
+                Console.SetCursorPosition(startX + l, startY + (int)Height - 1);
+                Console.WriteLine(' ');
+            }
+
         }
 
         public override void FillDraw()
