@@ -15,13 +15,6 @@ namespace HomeWork_15_1_Abstract
         private protected int SpeedX;
         private protected int SpeedY;
 
-        /*        public abstract int Numb // австосвойство // можно объявить, без реализации
-                {
-                    get;
-
-                    set;
-                }*/
-
         public Shape(ConsoleColor color, Vector2 position, int speedX, int speedY) 
         { 
             Color = color;

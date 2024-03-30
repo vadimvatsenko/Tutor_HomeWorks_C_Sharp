@@ -10,8 +10,22 @@ namespace HomeWork_15_3_Abstract
     {
         private protected ConsoleColor Color;
 
-        private protected Vector2 Position;
+        //private protected Vector2 Position;
 
+        //public Vector2 Position; // модификатор доступа??
+
+        private protected Vector2 position;
+        public Vector2 Position
+        {
+            get
+            {
+                return position;
+            }
+            private protected set
+            {
+                position = value;
+            }
+        }
 
         public Shape(ConsoleColor color, Vector2 position) 
         { 
@@ -19,8 +33,9 @@ namespace HomeWork_15_3_Abstract
             Position = position;
         }
 
-        public abstract void Draw();
         public abstract void FillDraw();
+
+        public abstract void Draw();
         public abstract void Move(Vector2 direction);
 
     }

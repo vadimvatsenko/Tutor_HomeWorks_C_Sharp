@@ -62,30 +62,30 @@ namespace HomeWork_15_1_Abstract
 
         public override void MoveRight()
         {
-            Console.Clear();
+  
             Position.X += SpeedX;
-            FillDraw();
+
         }
 
         public override void MoveLeft()
         {
-            Console.Clear();
+   
             Position.X -= SpeedX;
-            FillDraw();
+
         }
 
         public override void MoveUp()
         {
-            Console.Clear();
+   
             Position.Y -= SpeedY;
-            FillDraw();
+
         }
 
         public override void MoveDown()
         {
-            Console.Clear();
+ 
             Position.Y += SpeedY;
-            FillDraw();
+
         }
     }
 }

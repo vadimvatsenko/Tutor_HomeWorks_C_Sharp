@@ -15,24 +15,18 @@ namespace HomeWork_04_07_List
     {
         static void Main(string[] args)
         {
-            List<int> numb1 = new List<int>(6);
-            List<int> numb2 = new List<int>(numb1.Count);
-            Console.WriteLine(numb1.Capacity);
-            Random rnd = new Random();
 
-            for (int i = 0; i < numb1.Capacity; i++) // Capacity - ёмкость
+            List<int> list = new List<int>() { 10, 17, 30, 66, 11, 8, 6, 3, 1, 50 };
+            int[] numbs = new int[6];
+
+             list.CopyTo(4, numbs, 0, 6); // 4 - индекс в списке, numbs - массив в который копируем, 0 - индекс массива с которого начинаем заливку, 6 - количество чисел копирования
+
+            foreach (int num in numbs)
             {
-                numb1.Add(rnd.Next(0, 101));
+                Console.WriteLine(num);
             }
 
-            foreach (int i in numb1)
-            {
-                Console.WriteLine(i);
-            }
 
-            Console.WriteLine("+++");
-
-/*            numb2.InsertRange(3, )*/
         }
     }
 }

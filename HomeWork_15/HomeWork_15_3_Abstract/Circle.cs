@@ -14,42 +14,6 @@ namespace HomeWork_15_3_Abstract
             R = r;
         }
 
-        public override void Draw()
-        {
-            Console.ForegroundColor = Color;
-            Console.BackgroundColor = Color;
-
-            int startX = (int)Position.X;
-            int startY = (int)Position.Y;
-
-            Console.SetCursorPosition(startX, startY);
-
-            double step = 1.0 / R;
-
-            for (double i = 0; i <= Math.PI / 2; i += step)
-            {
-                int x = (int)Math.Round(R * Math.Cos(i));
-                int y = (int)Math.Round(R * Math.Sin(i));
-
-                Console.SetCursorPosition(startX + x, startY + y);
-                Console.Write(' ');
-                Console.SetCursorPosition(startX + x, startY - y);
-                Console.Write(' ');
-                Console.SetCursorPosition(startX - x, startY + y);
-                Console.Write(' ');
-                Console.SetCursorPosition(startX - x, startY - y);
-                Console.Write(' ');
-                Console.SetCursorPosition(startX + y, startY + x);
-                Console.Write(' ');
-                Console.SetCursorPosition(startX + y, startY - x);
-                Console.Write(' ');
-                Console.SetCursorPosition(startX - y, startY + x);
-                Console.Write(' ');
-                Console.SetCursorPosition(startX - y, startY - x);
-                Console.Write(' ');
-            }
-        }
-
         public override void FillDraw()
         {
             Console.ForegroundColor = Color;
@@ -83,10 +47,24 @@ namespace HomeWork_15_3_Abstract
             }
         }
 
+        public override void Draw()
+        {
+            for (double angle = 0; angle < 359; angle++)
+            {
+                Console.BackgroundColor = Color;
+                double X = Position.X + Math.Cos(angle) * R;
+                double Y = Position.Y + Math.Sin(angle) * R;
+                Console.SetCursorPosition((int)X, (int)Y);
+                Console.Write(" ");
+            }
+        }
+
         public override void Move(Vector2 direction)
         {
-            Position.X += direction.X;
-            Position.Y += direction.Y;
+            /*position.X += direction.X;
+            position.Y += direction.Y;*/
+
+            position += direction;
 
         }
     }

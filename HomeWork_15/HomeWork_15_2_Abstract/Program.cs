@@ -42,16 +42,14 @@ namespace HomeWork_15_1_Abstract
             switch (shape)
             {
                 case 1:
-                    targetShape = TriangleRenderer((Color)color, horizontalSpeed, verticalSpeed); // (Color)color - привидение типов, означает, что мы передали Color.Red например
-                    targetShape.FillDraw();
+                    TriangleRenderer((Color)color, horizontalSpeed, verticalSpeed); // (Color)color - привидение типов, означает, что мы передали Color.Red например
+
                     break;
                 case 2:
-                    targetShape = RectangleRenderer((Color)color, horizontalSpeed, verticalSpeed);
-                    targetShape.FillDraw();
+                    RectangleRenderer((Color)color, horizontalSpeed, verticalSpeed);
                     break;
                 case 3:
-                    targetShape = CircleRenderer((Color)color, horizontalSpeed, verticalSpeed);
-                    targetShape.FillDraw();
+                    CircleRenderer((Color)color, horizontalSpeed, verticalSpeed);
                     break;
                 default:
                     Console.WriteLine("Нет такой фигуры");
@@ -65,11 +63,43 @@ namespace HomeWork_15_1_Abstract
             Console.WriteLine("Введите клавишу:\n" +
                 "Вверх, Вниз, Лево или Право");
 
+
+
+            Console.SetCursorPosition(0, 0);
+            Console.BackgroundColor = ConsoleColor.Black;
+        }
+
+
+        static void TriangleRenderer(Color color, int horizontalSpeed, int verticalSpeed)
+        {
+            Shape targetShape = new Triangle((ConsoleColor)color, new Vector2(55, 3), 10, horizontalSpeed, verticalSpeed);
+            targetShape.FillDraw();
+            InputHandler(targetShape);
+          
+        }
+
+        static void RectangleRenderer(Color color, int horizontalSpeed, int verticalSpeed)
+        {
+            Shape targetShape = new Rectangle((ConsoleColor)color, new Vector2(55, 3), 10, 10, horizontalSpeed, verticalSpeed);
+            targetShape.FillDraw();
+            InputHandler(targetShape);
+        }
+
+        static void CircleRenderer(Color color, int horizontalSpeed, int verticalSpeed)
+        {
+            Shape targetShape = new Circle((ConsoleColor)color, new Vector2(55, 6), 5, horizontalSpeed, verticalSpeed);
+            targetShape.FillDraw();
+            InputHandler(targetShape);
+        }
+
+        static ConsoleKeyInfo InputHandler(Shape targetShape)
+        {
             while (true)
             {
-                
+                Console.SetCursorPosition(0, 0);
+                Console.BackgroundColor = ConsoleColor.Black;
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
-                             
+
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.DownArrow:
@@ -89,27 +119,15 @@ namespace HomeWork_15_1_Abstract
                         continue;
                 }
 
-                Console.SetCursorPosition(0, 0);
+                Console.Clear();
+                targetShape.FillDraw();
                 Console.BackgroundColor = ConsoleColor.Black;
             }
         }
-
-        static Shape TriangleRenderer( Color color, int horizontalSpeed, int verticalSpeed)
-        {
-            Shape targetShape = new Triangle((ConsoleColor)color, new Vector2(55, 3), 10, horizontalSpeed, verticalSpeed);
-            return targetShape;
-        }
-
-        static Shape RectangleRenderer(Color color, int horizontalSpeed, int verticalSpeed)
-        {
-            Shape targetShape = new Rectangle((ConsoleColor)color, new Vector2(55, 3), 10, 10, horizontalSpeed, verticalSpeed);
-            return targetShape;
-        }
-
-        static Shape CircleRenderer(Color color, int horizontalSpeed, int verticalSpeed)
-        {
-            Shape targetShape = new Circle((ConsoleColor)color, new Vector2(55, 6), 5, horizontalSpeed, verticalSpeed);
-            return targetShape;
-        }
     }
+
+    
+
+    // дописать//
 }
+

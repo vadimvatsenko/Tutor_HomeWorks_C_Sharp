@@ -24,9 +24,7 @@ namespace HomeWork_15_1_Abstract
 
             Console.ForegroundColor = Color;
             Console.BackgroundColor = Color;
-
-           
-
+          
             Console.SetCursorPosition(startX, startY);
 
             for (int i = 0; i < Height; i++)
