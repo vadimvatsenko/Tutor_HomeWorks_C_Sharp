@@ -16,10 +16,25 @@ namespace HomeWork_2_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите число");
-            int numb = int.Parse(Console.ReadLine());
+            
             int positiveNumber = 0;
             int negativeNumber = 0;
+
+            for (int i = 0; i < 10; i++) 
+            {
+                Console.WriteLine("Введите число");
+                int numb = int.Parse(Console.ReadLine());
+                if(numb < 0) 
+                {
+                    negativeNumber++;
+                } else if (numb >= 0) 
+                {
+                    positiveNumber++;
+                }
+            }
+
+            Console.WriteLine($"количество положительных = {positiveNumber}");
+            Console.WriteLine($"количество отрицательных = {negativeNumber}");
 
         }
     }
