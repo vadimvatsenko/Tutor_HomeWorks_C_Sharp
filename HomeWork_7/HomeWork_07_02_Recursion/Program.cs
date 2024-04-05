@@ -15,14 +15,22 @@ namespace HomeWork_07_02_Recursion
         {
             int[] numbs = { -2, 6, 12, -10, 30, 40 };
 
-            int maxValue = MaxValue(numbs, numbs.Length);
+            int maxValue = MaxValue(numbs, 0);
+            Console.WriteLine(maxValue);
         }
 
         static int MaxValue(int[] numbs, int index)
         {
-
             int max = numbs[0];
-            return 
+            if (max < numbs[index]) 
+            {
+                max = numbs[index];
+                MaxValue(numbs, index + 1); 
+            }
+
+            return max;
+
+
         }
     }
 }

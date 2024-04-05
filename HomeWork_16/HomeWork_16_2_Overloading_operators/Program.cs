@@ -18,17 +18,17 @@ namespace HomeWork_16_2_Overloading_operators
         static void Main(string[] args)
         {
             Random random = new Random();
-            int[] numbs1 = new int[25];
-            int[] numbs2 = new int[25];
+            int[] numbs1 = new int[9];
+            int[] numbs2 = new int[9];
 
-            for (int i = 0; i < 25; i++)
+            for (int i = 0; i < 9; i++)
             {
                 numbs1[i] = random.Next(0, 101);
                 numbs2[i] = random.Next(0, 101);
             }
 
-            SquareMatrix matrix1 = new SquareMatrix(5, 5, numbs1);
-            SquareMatrix matrix2 = new SquareMatrix(5, 5, numbs2);
+            SquareMatrix matrix1 = new SquareMatrix(3, 3, numbs1);
+            SquareMatrix matrix2 = new SquareMatrix(3, 3, numbs2);
 
             matrix1.Print();
             Console.WriteLine();

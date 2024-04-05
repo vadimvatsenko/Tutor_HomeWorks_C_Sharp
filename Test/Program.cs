@@ -8,19 +8,28 @@ namespace Test
 {
     internal class Program
     {
-            
+
         static void Main(string[] args)
         {
-            int fib4 = Fibonachi(4);
-            Console.WriteLine(fib4);
-        }
+            double position = 5;
+            double speed = 0.1;
+            double height = 3;
 
-        static int Fibonachi(int i)
-        {
-            if (i == 0 || i == 1) return i;
-            return Fibonachi(i - 1) + Fibonachi(i - 2);
+            double summ = 0;
+            for (double i = 0; i < height; i += speed)
+            {
+                position = position - i;
+                Console.WriteLine(i);
+                summ += i;
+                
+            }
+            Console.WriteLine(summ);
+            Console.WriteLine(position);
+
         }
-              
     }
-
 }
+
+    
+
+
