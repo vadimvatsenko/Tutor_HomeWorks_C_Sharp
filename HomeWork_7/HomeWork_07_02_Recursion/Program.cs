@@ -13,24 +13,26 @@ namespace HomeWork_07_02_Recursion
     {
         static void Main(string[] args)
         {
-            int[] numbs = { -2, 6, 12, -10, 30, 40 };
+            int[] numbs = { -2, 6, 12, -10, 50, 40 };
 
-            int maxValue = MaxValue(numbs, 0);
-            Console.WriteLine(maxValue);
+            int maxIndexValue = MaxValue(numbs, 0);
+            Console.WriteLine(maxIndexValue);
         }
 
         static int MaxValue(int[] numbs, int index)
         {
-            int max = numbs[0];
-            if (max < numbs[index]) 
+            if (index == numbs.Length - 1)
+                return index;
+
+            int maxIndex = MaxValue(numbs, index + 1);
+
+            if (numbs[index] > numbs[maxIndex])
             {
-                max = numbs[index];
-                MaxValue(numbs, index + 1); 
+                return index;
+            } else
+            {
+                return maxIndex;
             }
-
-            return max;
-
-
         }
     }
 }

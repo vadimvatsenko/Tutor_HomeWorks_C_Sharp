@@ -64,7 +64,7 @@ namespace HomeWork_15_3_Abstract
             /*position.X += direction.X;
             position.Y += direction.Y;*/
 
-            position += direction;
+            Position += direction;
 
         }
     }

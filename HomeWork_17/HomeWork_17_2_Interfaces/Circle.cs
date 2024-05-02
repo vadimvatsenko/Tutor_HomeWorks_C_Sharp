@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork_17_2_Interfaces
 {
-    delegate void JumpOrShoot();
+    
     internal class Circle : Shape, IJump, IShoot
     {
         private double R;
@@ -46,7 +46,7 @@ namespace HomeWork_17_2_Interfaces
                 if(Position.y >= endPosition && !isJump)
                 {
                     Console.Clear();
-                    Position.y -= speed;
+                    position -= new Vector2(0, speed);
                     Draw();
                     Console.BackgroundColor = ConsoleColor.Black;
                     
@@ -54,8 +54,8 @@ namespace HomeWork_17_2_Interfaces
 
                 else if (isJump && Position.y < startPosition.y)
                 {
-                    Console.Clear();
-                    Position.y += speed;
+                   Console.Clear();
+                    position += new Vector2(0, speed);
                     Draw();
                     Console.BackgroundColor = ConsoleColor.Black;
                 } else
@@ -65,31 +65,27 @@ namespace HomeWork_17_2_Interfaces
             
             }
         }
+
+        public override void Move(Vector2 direction)
+        {
+            position += direction;
+        }
+
         public void Shoot(Shape bullet, Vector2 direction)
         {
-            throw new NotImplementedException();
+ 
+            while (true)
+            {
+                Console.Clear();
+                
+                 (bullet as Circle).position += direction; 
+                bullet.Draw();
+                Console.BackgroundColor = ConsoleColor.Black;
+
+            }
         }
 
-        public override void MoveDown()
-        {
-            Position.y += SpeedY;
-        }
-
-        public override void MoveLeft()
-        {
-            Position.x -= SpeedX;
-        }
-
-        public override void MoveRight()
-        {
-            Position.x += SpeedX;
-        }
-
-        public override void MoveUp()
-        {
-            Position.y -= SpeedY;
-
-        }
+        
 
     }
 }

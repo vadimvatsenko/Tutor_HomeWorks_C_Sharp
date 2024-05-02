@@ -15,7 +15,10 @@ namespace HomeWork_17_2_Interfaces
     {
         static void Main(string[] args)
         {
+            Console.SetWindowSize(50, 50);
+
             Circle circle = new Circle(ConsoleColor.Red, new Vector2(10,20),0.5, 0.5 , 5);
+            
             circle.Draw();
 
             Console.SetCursorPosition(0,0);
@@ -26,25 +29,27 @@ namespace HomeWork_17_2_Interfaces
                 Console.BackgroundColor = ConsoleColor.Black;
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
 
+                Circle bullet = new Circle(ConsoleColor.Yellow, new Vector2(circle.Position.x + 10, circle.Position.y), 0.5, 0.5, 2);
+
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.DownArrow:
-                        circle.MoveDown();
+                        circle.Move(Vector2.Down);
                         break;
                     case ConsoleKey.UpArrow:
-                        circle.MoveUp();
+                        circle.Move(Vector2.Up);
                         break;
                     case ConsoleKey.LeftArrow:
-                        circle.MoveLeft();
+                        circle.Move(Vector2.Left);
                         break;
                     case ConsoleKey.RightArrow:
-                        circle.MoveRight();
+                        circle.Move(Vector2.Right);
                         break;
                     case ConsoleKey.Spacebar:
                         circle.Jump(10, 0.5);
                         break;
                     case ConsoleKey.G:
-                        Console.WriteLine("Shoot");
+                        circle.Shoot(bullet, Vector2.Right * 5);
                         break;
                     default:
                         Console.WriteLine("Неправильная клавиша");
