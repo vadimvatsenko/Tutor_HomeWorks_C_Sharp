@@ -8,18 +8,17 @@ namespace HomeWork_19_1_LINQ
 {
     public class Tickets
     {
-        public DateTime InsuranceDateTime {  get; private set; }
+        public DateTime InsuranceDateTime {  get; private set; } // дата составления заявки
+        public int NubmerInsuranceID { get; private set; } // номер страховки
+        public int TicketNumber { get; private set; }
         public DateTime OutDate { get; private set; }
-
-        private static int NextNumber = 1;
-        public int NubmerInsurance { get; private set; } // номер страховки
-        public int TicketNumber { get; private set; } = 0;
 
         public Tickets(DateTime insuranceDateTime, Insurance insurance, DateTime outDate)
         {
+
             InsuranceDateTime = insuranceDateTime;
-            NubmerInsurance = insurance.Number;
-            TicketNumber = NextNumber++;
+            NubmerInsuranceID = insurance.InsuranceNumberID;
+            TicketNumber = IDGenerator.GenerateNumberID(15);
             OutDate = outDate;
         }
 
@@ -27,8 +26,10 @@ namespace HomeWork_19_1_LINQ
         {
             Console.WriteLine($"TicketNumber: {TicketNumber}, \n" +
                 $"InsuranceDateTime: {InsuranceDateTime}, \n" +
-                $"NubmerInsurance: {NubmerInsurance}, \n" +
+                $"NubmerInsuranceID: {NubmerInsuranceID}, \n" +
                 $"OutDate: {OutDate}");
         }
     }
 }
+
+// DONE

@@ -8,15 +8,16 @@ namespace HomeWork_19_1_LINQ
 {
     public class Tour
     {
-        public static int NextNumber = 1;
+        public int TourID { get; private set; }
+
+        public int NextNumber = 1;
         public int TourNumber { get; private set; } = 0;
-        public string TourID { get; private set; }
-        public string LocationID { get; private set; }
+        public int LocationID { get; private set; }
 
         public Tour(Location location) 
         {
             TourNumber = NextNumber++;
-            TourID = IDGenerator.GenerateID(4);
+            TourID = IDGenerator.GenerateNumberID(4);
             LocationID = location.LocationID;
         }
 
@@ -26,6 +27,7 @@ namespace HomeWork_19_1_LINQ
                 $"TourID: {TourID}, \n" +
                 $"LocationID: {LocationID}");
         }
-
     }
 }
+
+//DONE

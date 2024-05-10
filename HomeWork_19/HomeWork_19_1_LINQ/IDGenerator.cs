@@ -10,7 +10,7 @@ namespace HomeWork_19_1_LINQ
     {
         private static Random random = new Random();
 
-        public static string GenerateID(int countSymbol)
+        public static string GenerateStringID(int countSymbol)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             char[] idChars = new char[countSymbol];
@@ -21,6 +21,20 @@ namespace HomeWork_19_1_LINQ
             }
 
             return new string(idChars);
+        }
+
+        public static int GenerateNumberID(int countSymbol)
+        {
+            int randomNumb = 0;
+
+            for (int i = 0;i < countSymbol;i++)
+            {
+                randomNumb += random.Next(0, countSymbol);
+            }
+            
+            return randomNumb;
+
+
         }
     }
 }

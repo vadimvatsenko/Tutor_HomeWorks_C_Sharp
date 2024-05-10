@@ -9,33 +9,34 @@ namespace HomeWork_19_1_LINQ
 {
     public class Insurance // страховка
     {
-        private static int NextNumber = 1;
-        public int Number { get; private set; } = 0;
-        public User User { get; private set; }
-        public string CompanyName { get; private set; }
-        public DateTime IssueDate { get; private set; } // дата оформления
-        public DateTime Validity {  get; private set; } // дата завершения
-        public double SumInsured { get; private set; }
+        public int InsuranceNumberID { get; private set; } // номер id страховки
+        public int UserID { get; private set; } // id клиента
+        public string CompanyName { get; private set; } // название компании
+        public DateTime InsuranceValidity {  get; private set; } // срок действия
+        public double SumInsured { get; private set; } // страховая сумма
+        public DateTime InsuranceIssueDate { get; private set; } // дата оформления
 
-        public Insurance(User user, string companyName, DateTime issueDate, double sumInsured) 
+        public Insurance(User user, string companyName, DateTime insuranceValidity, double sumInsured, DateTime insuranceIssueDate) 
         {
-            Number = NextNumber++;
-            User = user;
+            InsuranceNumberID = IDGenerator.GenerateNumberID(2);
+            UserID = user.UserID;
             CompanyName = companyName;
-            IssueDate = issueDate;
-            Validity = issueDate.AddYears(1);
+            InsuranceValidity = insuranceValidity;
             SumInsured = sumInsured;
+            InsuranceIssueDate = insuranceIssueDate;
         }
 
         public void Print()
         {
             Console.WriteLine(
-                $"Number = {Number}, \n" +
-                $"User = {User.FirstName} - {User.SecondName}, \n" +
-                $"Company = {CompanyName}, \n" +
-                $"IssueDate = {IssueDate}, \n" +
-                $"Validity = {Validity}, \n" +
-                $"SumInsured = {SumInsured}");
+                $"InsuranceNumberID = {InsuranceNumberID}, \n" +
+                $"UserID = {UserID}, \n" +
+                $"CompanyName = {CompanyName}, \n" +
+                $"InsuranceValidity = {InsuranceValidity}, \n" +
+                $"SumInsured = {SumInsured}, \n" +
+                $"InsuranceIssueDate = {InsuranceIssueDate}");
         }
     }
 }
+
+// DONE

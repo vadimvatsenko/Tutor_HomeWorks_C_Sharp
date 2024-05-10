@@ -8,14 +8,14 @@ namespace HomeWork_19_1_LINQ
 {
     public class Review
     {
-        public string ReviewID { get; private set; }
-        public string UserID { get; private set; }
-        public string TourID { get; private set; }
+        public int ReviewID { get; private set; }
+        public int TourID { get; private set; }
+        public int UserID { get; private set; }
         public string ReviewDesrc { get; private set; }
 
         public Review(User user, Tour tour, string reviewDesrc)
         {
-            ReviewID = IDGenerator.GenerateID(8);
+            ReviewID = IDGenerator.GenerateNumberID(6);
             UserID = user.UserID;
             TourID = tour.TourID;
             ReviewDesrc = reviewDesrc;
@@ -30,3 +30,5 @@ namespace HomeWork_19_1_LINQ
         }
     }
 }
+
+// DONE

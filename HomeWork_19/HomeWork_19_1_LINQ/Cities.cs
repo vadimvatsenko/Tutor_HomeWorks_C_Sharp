@@ -8,13 +8,21 @@ namespace HomeWork_19_1_LINQ
 {
     public class Cities
     {
-        public string CitiID { get; private set; }
+        private static int NextNumber = 1;
+        public int CitiID { get; private set; } = 0;
         public string CitiName { get; private set; }
 
         public Cities(string name) 
         {
-            CitiID = IDGenerator.GenerateID(6);
+            CitiID = NextNumber++;
             CitiName = name;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"CitiID: {CitiID}, CitiName: {CitiName}");
         }
     }
 }
+
+//DONE

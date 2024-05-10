@@ -8,17 +8,17 @@ namespace HomeWork_19_1_LINQ
 {
     public class User // пользователь
     {
-        public string UserID { get; private set; }
-        public string FirstName { get; private set; }
-        public string SecondName { get; private set; }
-        public int Phone { get; private set; }
+        public int UserID { get; private set; } // ID пользователя
+        public string FirstName { get; private set; } // имя
+        public string SecondName { get; private set; } // фамилия
+        public string Phone { get; private set; } // телефон
 
         public User(string firstName, string secondName, int phone)
         {
-            UserID = IDGenerator.GenerateID(10);
+            UserID = IDGenerator.GenerateNumberID(10);
             FirstName = firstName;
             SecondName = secondName;
-            Phone = phone;
+            Phone = phone.ToString("+38 (###) ###-##-##");
         }
 
         public void Print()
@@ -28,7 +28,8 @@ namespace HomeWork_19_1_LINQ
                 $"FirstName = {FirstName}, \n" +
                 $"SecondName = {SecondName}, \n" +
                 $"Phone = {Phone}");
-        }
-       
+        }       
     }
 }
+
+//Done
