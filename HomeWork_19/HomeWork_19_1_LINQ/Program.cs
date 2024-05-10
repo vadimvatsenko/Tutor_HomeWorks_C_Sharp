@@ -31,10 +31,10 @@ namespace HomeWork_19_1_LINQ
             }; // список юзеров
             List<Salary> employeeSalariesList = new List<Salary>()
             {
-                new Salary(usersList[0], new DateTime(2024, 5, 1, 9, 30, 00 ), 15100.00),
-                new Salary(usersList[1], new DateTime(2024, 5, 1, 9, 40, 00 ), 1100.00),
+                new Salary(usersList[0], new DateTime(2024, 5, 1, 9, 30, 00 ), 14900.00),
+                new Salary(usersList[1], new DateTime(2024, 4, 1, 9, 40, 00 ), 20000.00),
                 new Salary(usersList[2], new DateTime(2024, 4, 1, 9, 50, 00 ), 1500.00),
-                new Salary(usersList[3], new DateTime(2024, 4, 1, 10, 00, 00 ), 900.00),
+                new Salary(usersList[3], new DateTime(2024, 4, 1, 10, 00, 00 ), 50000.00),
                 new Salary(usersList[4], new DateTime(2024, 5, 1, 10, 15, 00 ), 750.00),
                 new Salary(usersList[5], new DateTime(2024, 5, 1, 10, 15, 00 ), 750.00),
                 new Salary(usersList[6], new DateTime(2024, 2, 1, 10, 15, 00 ), 1750.00),
@@ -190,6 +190,7 @@ namespace HomeWork_19_1_LINQ
             #endregion
             #region
             //2. Получить ранжированный список пользователей с именем и фамилией, зарплата которых не больше 15000 и дата полученный больше чем 12.04.2024
+            //3. Дополнить второе задание и получить список зарплат и увеличить каждую зарплату на 20% и вывести данные в формате Name Surname : Salary
             var sortEployees = from u in usersList
                                join s in employeeSalariesList on u.UserID equals s.EmployeeID
                                orderby u.SecondName
@@ -199,21 +200,43 @@ namespace HomeWork_19_1_LINQ
                                    UName = u.FirstName,
                                    USecondName = u.SecondName,
                                    Salary = s.EmployeeMoney,
+                                   Salary20 = Math.Round(s.EmployeeMoney * 1.2f, 0),
                                    Date = s.dateTimeSalary,
                                };
                                
 
             foreach(var u in sortEployees)
             {
-                Console.WriteLine($"{u.UName} {u.USecondName}, {u.Salary}, {u.Date}");
+                Console.WriteLine($"Name: {u.UName}, SecondName: {u.USecondName}, \n" +
+                    $"Salary: {u.Salary}$, \n" +
+                    $"Salary + 20%: {u.Salary20}$, \n" +
+                    $"Salary Date: {u.Date}");
+                Console.WriteLine();
             }
+            var sortEployees1 = usersList.Join(employeeSalariesList,
+                                    u => u.UserID,
+                                    e => e.EmployeeID,
+                                    (u, e) => new { Name = u.FirstName, SecondName = u.SecondName, Sal = e.EmployeeMoney, Sal20 = e.EmployeeMoney * 1.2, Date = e.dateTimeSalary })
+                                    .Where(e => e.Sal < 15000 && e.Date > new DateTime(2024, 4, 12));
+
+            foreach(var s in sortEployees1)
+            {
+                Console.WriteLine($"Name: {s.Name}, SecondName: {s.SecondName}, \n" +
+                    $"Salary: {s.Sal}$, \n" +
+                    $"Salary + 20%: {s.Sal20}$, \n" +
+                    $"Salary Date: {s.Date}");
+                Console.WriteLine();
+            }
+
             #endregion
-            //3. Дополнить второе задание и получить список зарплат и увеличить каждую зарплату на 20% и вывести данные в формате Name Surname : Salary
-            //4. Получить перечень туров, ранжированных пол количеству посещаемых стран. // 2ва 
+            #region
+            //4. Получить перечень туров, ранжированных по количеству посещаемых стран. // 2ва 
+           
             //5. Получить ранжированный список стран по посещаемости(количеству договоров)
             //6. Получить список пользователей, побывавших абсолютно во всех странах
             //7. Посчитать доход от конкретного тура (на ваше усмотрение) по всем заказавшим его клиентам
             //8. Получить список клиентов, отправляющихся в поездку в период от 01.04.2024 до 07.04.2024
+
             //9. Для конкретного пользователя (на ваше усмотрение) получить список стан, городов, вида транспорта и страховой компании с указанием что есть что
             //10.Получить список всех туров, продолжительность которых равна менее чем 60 дней и снизить их стоимость на процент равный продолжительности
 
