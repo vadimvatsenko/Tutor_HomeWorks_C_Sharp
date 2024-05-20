@@ -112,7 +112,46 @@ namespace HomeWork_19_1_LINQ
                 new Cities("Salvador")
             }; // список городов
             List<Location> locationsList = FillLocations(countryList, cityList); // список локаций
-            List<Tour> toursList = FillTours(locationsList); // тур
+            List<TourRegistration> tourRegistrationsList = new List<TourRegistration>()
+            {
+                new TourRegistration("Historical Treasures Tour", Transport.Bus, Transport.Car, "Explore Ancient Sites", new DateTime(2024, 6, 5), 500),
+                new TourRegistration("Nature Explorer Expedition", Transport.Car, Transport.Car, "Discover Natural Wonders", new DateTime(2024, 6, 15), 1500),
+                new TourRegistration("Cultural Immersion Journey", Transport.Ship, Transport.Taxy, "Experience Local Traditions", new DateTime(2024, 6, 11), 2500),
+                new TourRegistration("Adventure Seeker's Quest", Transport.Airplane, Transport.Ship, "Thrilling Outdoor Adventures", new DateTime(2024, 6, 16), 500),
+                new TourRegistration("Food and Wine Trail", Transport.Taxy, Transport.Ship, "Indulge in Gastronomy", new DateTime(2025, 6, 5), 300),
+                new TourRegistration("City Lights Tour", Transport.Taxy, Transport.Airplane, "Urban Exploration Excursion", new DateTime(2024, 7, 5), 700),
+                new TourRegistration("Island Paradise Escape", Transport.Ship, Transport.Ship, "Tropical Bliss Retreat", new DateTime(2024, 8, 12), 700),
+                new TourRegistration("Wildlife Safari Adventure", Transport.Bus, Transport.Bus, "Encounter Exotic Animals", new DateTime(2024, 8, 9), 800),
+                new TourRegistration("Heritage Trail Experience", Transport.Airplane, Transport.Taxy, "Dive into History", new DateTime(2024, 6, 30), 800),
+                new TourRegistration("Historical Treasures Tour", Transport.Bus, Transport.Car, "Explore Ancient Sites", new DateTime(2024, 6, 5), 500),
+                new TourRegistration("Nature Explorer Expedition", Transport.Car, Transport.Car, "Discover Natural Wonders", new DateTime(2024, 6, 15), 1500),
+                new TourRegistration("Cultural Immersion Journey", Transport.Ship, Transport.Taxy, "Experience Local Traditions", new DateTime(2024, 6, 11), 2500),
+                new TourRegistration("Adventure Seeker's Quest", Transport.Airplane, Transport.Ship, "Thrilling Outdoor Adventures", new DateTime(2024, 6, 16), 500),
+                new TourRegistration("Food and Wine Trail", Transport.Taxy, Transport.Ship, "Indulge in Gastronomy", new DateTime(2025, 6, 5), 300),
+                new TourRegistration("City Lights Tour", Transport.Taxy, Transport.Airplane, "Urban Exploration Excursion", new DateTime(2024, 7, 5), 700),
+                new TourRegistration("Island Paradise Escape", Transport.Ship, Transport.Ship, "Tropical Bliss Retreat", new DateTime(2024, 8, 12), 700),
+                new TourRegistration("Wildlife Safari Adventure", Transport.Bus, Transport.Bus, "Encounter Exotic Animals", new DateTime(2024, 8, 9), 800),
+                new TourRegistration("Heritage Trail Experience", Transport.Airplane, Transport.Taxy, "Dive into History", new DateTime(2024, 6, 30), 800),
+                new TourRegistration("Historical Treasures Tour", Transport.Bus, Transport.Car, "Explore Ancient Sites", new DateTime(2024, 6, 5), 500),
+                new TourRegistration("Nature Explorer Expedition", Transport.Car, Transport.Car, "Discover Natural Wonders", new DateTime(2024, 6, 15), 1500),
+                new TourRegistration("Cultural Immersion Journey", Transport.Ship, Transport.Taxy, "Experience Local Traditions", new DateTime(2024, 6, 11), 2500),
+                new TourRegistration("Adventure Seeker's Quest", Transport.Airplane, Transport.Ship, "Thrilling Outdoor Adventures", new DateTime(2024, 6, 16), 500),
+                new TourRegistration("Food and Wine Trail", Transport.Taxy, Transport.Ship, "Indulge in Gastronomy", new DateTime(2025, 6, 5), 300),
+                new TourRegistration("City Lights Tour", Transport.Taxy, Transport.Airplane, "Urban Exploration Excursion", new DateTime(2024, 7, 5), 700),
+                new TourRegistration("Island Paradise Escape", Transport.Ship, Transport.Ship, "Tropical Bliss Retreat", new DateTime(2024, 8, 12), 700),
+                new TourRegistration("Wildlife Safari Adventure", Transport.Bus, Transport.Bus, "Encounter Exotic Animals", new DateTime(2024, 8, 9), 800),
+                new TourRegistration("Heritage Trail Experience", Transport.Airplane, Transport.Taxy, "Dive into History", new DateTime(2024, 6, 30), 800),
+                new TourRegistration("Historical Treasures Tour", Transport.Bus, Transport.Car, "Explore Ancient Sites", new DateTime(2024, 6, 5), 500),
+                new TourRegistration("Nature Explorer Expedition", Transport.Car, Transport.Car, "Discover Natural Wonders", new DateTime(2024, 6, 15), 1500),
+                new TourRegistration("Cultural Immersion Journey", Transport.Ship, Transport.Taxy, "Experience Local Traditions", new DateTime(2024, 6, 11), 2500),
+                new TourRegistration("Adventure Seeker's Quest", Transport.Airplane, Transport.Ship, "Thrilling Outdoor Adventures", new DateTime(2024, 6, 16), 500),
+                new TourRegistration("Food and Wine Trail", Transport.Taxy, Transport.Ship, "Indulge in Gastronomy", new DateTime(2025, 6, 5), 300),
+                new TourRegistration("City Lights Tour", Transport.Taxy, Transport.Airplane, "Urban Exploration Excursion", new DateTime(2024, 7, 5), 700),
+                new TourRegistration("Island Paradise Escape", Transport.Ship, Transport.Ship, "Tropical Bliss Retreat", new DateTime(2024, 8, 12), 700),
+                new TourRegistration("Wildlife Safari Adventure", Transport.Bus, Transport.Bus, "Encounter Exotic Animals", new DateTime(2024, 8, 9), 800),
+                new TourRegistration("Heritage Trail Experience", Transport.Airplane, Transport.Taxy, "Dive into History", new DateTime(2024, 6, 30), 800),
+            }; // оформление тура
+            List<Tour> toursList = FillTours(locationsList, tourRegistrationsList); // тур
             List<Review> reviewsList = new List<Review>()
             {
                 new Review(usersList[0], toursList[3], "Good"),
@@ -139,19 +178,6 @@ namespace HomeWork_19_1_LINQ
                 new Tickets(new DateTime(2024, 5, 11), insurancesList[5], new DateTime(2024, 5, 25)),
                 new Tickets(new DateTime(2024, 5, 31), insurancesList[6], new DateTime(2024, 6, 13)),
             }; // заявка на билет
-            List<TourRegistration> tourRegistrationsList = new List<TourRegistration>()
-            {
-                new TourRegistration("Historical Treasures Tour", Transport.Bus, Transport.Car, "Explore Ancient Sites", new DateTime(2024, 6, 5), 500),
-                new TourRegistration("Nature Explorer Expedition", Transport.Car, Transport.Car, "Discover Natural Wonders", new DateTime(2024, 6, 15), 1500),
-                new TourRegistration("Cultural Immersion Journey", Transport.Ship, Transport.Taxy, "Experience Local Traditions", new DateTime(2024, 6, 11), 2500),
-                new TourRegistration("Adventure Seeker's Quest", Transport.Airplane, Transport.Ship, "Thrilling Outdoor Adventures", new DateTime(2024, 6, 16), 500),
-                new TourRegistration("Food and Wine Trail", Transport.Taxy, Transport.Ship, "Indulge in Gastronomy", new DateTime(2025, 6, 5), 300),
-                new TourRegistration("City Lights Tour", Transport.Taxy, Transport.Airplane, "Urban Exploration Excursion", new DateTime(2024, 7, 5), 700),
-                new TourRegistration("Island Paradise Escape", Transport.Ship, Transport.Ship, "Tropical Bliss Retreat", new DateTime(2024, 8, 12), 700),
-                new TourRegistration("Wildlife Safari Adventure", Transport.Bus, Transport.Bus, "Encounter Exotic Animals", new DateTime(2024, 8, 9), 800),
-                new TourRegistration("Heritage Trail Experience", Transport.Airplane, Transport.Taxy, "Dive into History", new DateTime(2024, 6, 30), 800),
-                new TourRegistration("Wellness Retreat Getaway", Transport.Bus, Transport.Ship, "Rejuvenate Mind and Body", new DateTime(2024, 7, 11), 900),
-            }; // оформление тура
             List<Contract> contractsList = new List<Contract>()
             {
                 new Contract(toursList[0], new DateTime(2024, 5, 15), usersList[0], usersList[10], new DateTime(2024, 5, 3), 100, new DateTime(2024, 5, 13)),
@@ -167,13 +193,13 @@ namespace HomeWork_19_1_LINQ
             };
 
             #region
-            //1. Получить перечень городов из массива типа Location, айди которых больше 5 и названия городов должны начинаться с буквы M
+            //1. Получить перечень городов из массива типа Location, айди содержит 5 и названия городов должны начинаться с буквы M
             var sortCities = from l in locationsList
                              join c in cityList on l.CityID equals c.CitiID
-                             where c.CitiID > 5 && c.CitiName.StartsWith("M")
+                             where c.CitiID.Contains("5") && c.CitiName.StartsWith("M")
                              select c;
 
-            /*foreach( var city in sortCities)
+            /*foreach (var city in sortCities)
             {
                 city.Print();
             }*/
@@ -181,10 +207,10 @@ namespace HomeWork_19_1_LINQ
                               l => l.CityID,
                               c => c.CitiID,
                               (l, c) => new { l, c })
-                              .Where(x => x.c.CitiID > 5 && x.c.CitiName.StartsWith("M"));
+                              .Where(x => x.c.CitiID.Contains("5") && x.c.CitiName.StartsWith("M"));
 
 
-            /*foreach( var city in sortCities2)
+            /*foreach (var city in sortCities2)
             {
                 Console.WriteLine($"{city.c.CitiName}, {city.c.CitiID}");
             }*/
@@ -204,61 +230,76 @@ namespace HomeWork_19_1_LINQ
                                    Salary20 = Math.Round(s.EmployeeMoney * 1.2f, 0),
                                    Date = s.dateTimeSalary,
                                };
-                               
 
-            foreach(var u in sortEployees)
+
+            /*foreach (var u in sortEployees)
             {
                 Console.WriteLine($"Name: {u.UName}, SecondName: {u.USecondName}, \n" +
                     $"Salary: {u.Salary}$, \n" +
                     $"Salary + 20%: {u.Salary20}$, \n" +
                     $"Salary Date: {u.Date}");
                 Console.WriteLine();
-            }
+            }*/
             var sortEployees1 = usersList.Join(employeeSalariesList,
                                     u => u.UserID,
                                     e => e.EmployeeID,
                                     (u, e) => new { Name = u.FirstName, SecondName = u.SecondName, Sal = e.EmployeeMoney, Sal20 = e.EmployeeMoney * 1.2, Date = e.dateTimeSalary })
                                     .Where(e => e.Sal < 15000 && e.Date > new DateTime(2024, 4, 12));
 
-            foreach(var s in sortEployees1)
+            /*foreach(var s in sortEployees1)
             {
                 Console.WriteLine($"Name: {s.Name}, SecondName: {s.SecondName}, \n" +
                     $"Salary: {s.Sal}$, \n" +
                     $"Salary + 20%: {s.Sal20}$, \n" +
                     $"Salary Date: {s.Date}");
                 Console.WriteLine();
-            }
+            }*/
 
             #endregion
             #region
+
             //4. Получить перечень туров, ранжированных по количеству посещаемых стран. // 2ва 
+            var tourLocationList = from t in tourRegistrationsList // оформление тура
+                                   join tl in toursList on t.TourRegistrationNumberID equals tl.TourNumberRegID // тур-локация
+                                   join l in locationsList on tl.LocationID equals l.LocationID
+                                   group l by t.TourRegistrationName into g
+                                   orderby g.Key
+                                   select new
+                                   {
+                                       KeyN = g.Key,
+                                       Name = g,
+                                       Count = g.Select(p => p.CountryID).Count(),
+                                   };
+
+            /*foreach (var s in tourLocationList)
+            {
+                Console.WriteLine(s.KeyN + ": " + s.Count);
+            }*/
+
+            var locCountAndCity = from l in locationsList
+                                  join c in countryList on l.CountryID equals c.CountryId
+                                  join s in cityList on l.CityID equals s.CitiID
+                                  
+
+            foreach ( var loc in locCountAndCity)
+            {
+                Console.WriteLine(loc.CountryName);
+                Console.WriteLine();
+            }
+
+
+                                  
+
+
+
             #endregion
             //5. Получить ранжированный список стран по посещаемости(количеству договоров)
             //6. Получить список пользователей, побывавших абсолютно во всех странах
             //7. Посчитать доход от конкретного тура (на ваше усмотрение) по всем заказавшим его клиентам
             //8. Получить список клиентов, отправляющихся в поездку в период от 01.04.2024 до 07.04.2024
-
             //9. Для конкретного пользователя (на ваше усмотрение) получить список стан, городов, вида транспорта и страховой компании с указанием что есть что
             //10.Получить список всех туров, продолжительность которых равна менее чем 60 дней и снизить их стоимость на процент равный продолжительности
 
-            //Получение части коллекции Методы Skip и Take
-            //Метод Skip() пропускает определенное количество элементов
-            string[] people = { "Tom", "Sam", "Bob", "Mike", "Kate" };
-            var result = people.Skip(2); // // "Bob", "Mike", "Kate" // пропускаем первые два элемента
-            // SkipLast() - пропустить определенное количество элементов с конца коллекции
-            var result1 = people.SkipLast(2); // // "Tom", "Sam", "Bob"
-            // Метод SkipWhile() пропускает цепочку элементов, начиная с первого элемента, пока они удовлетворяют определенному условию
-            var result2 = people.SkipWhile(p => p.Length == 3); // "Mike", "Kate", "Bob" - Здесь метод SkipWhile пропускает элементы, длина которых равна 3 символам, до первого не совпадения
-            // Метод Take() извлекает определенное число элементов
-            var result3 = people.Take(3); // "Tom", "Sam", "Mike"
-            // Метод TakeLast() извлекает определенное количество элементов с конце коллекции:
-            var result4 = people.TakeLast(3); // "Mike", "Kate", "Bob"
-            // Метод TakeWhile() выбирает цепочку элементов, начиная с первого элемента, пока они удовлетворяют определенному условию:
-            var result5 = people.TakeWhile(p => p.Length == 3); // // "Tom", "Sam" - извлекаем первые элементы, длина которых равна 3
-            // Если бы первый элемент в массиве имел бы длину больше или меньше 3 символов, то в этом случае метод TakeWhile возвратил бы нам 0
-
-            // Постраничный вывод - Совмещая оба метода - Take и Skip, мы можем выбрать определенное количество элементов начиная с определенного элемента
-            var result6 = people.Skip(3).Take(2); // // "Kate", "Bob" - // пропускаем 3 элемента и выбираем 2 элемента
 
         }
         static List<Location> FillLocations(List<Country> countryList, List<Cities> cityList)
@@ -276,19 +317,22 @@ namespace HomeWork_19_1_LINQ
 
             return filledLocation;
         }
-        static List<Tour> FillTours(List<Location> location)
+        static List<Tour> FillTours(List<Location> location, List<TourRegistration> tourRegistrations)
         {
             List<Tour> newTourList = new List<Tour>();
-            for(int i = 0; i < location.Count; i++)
+            for (int i = 0; i < location.Count; i++)
             {
-                newTourList.Add(new Tour(location[i]));
+                newTourList.Add(new Tour(location[i], tourRegistrations[i]));
             }
+
             return newTourList;
         }
     }
+}
 
     
 
-}
+
+
 
 

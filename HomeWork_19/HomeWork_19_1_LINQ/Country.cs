@@ -9,13 +9,13 @@ namespace HomeWork_19_1_LINQ
    
     public class Country
     {
-        public int CountryId { get; private set; }
+        public string CountryId { get; private set; }
         public string CountryName { get; private set; }
         public bool CountryVisa { get; private set; }
 
         public Country(string name, bool visa)
         {
-            CountryId = IDGenerator.GenerateNumberID(3);
+            CountryId = IDGenerator.GenerateStringID(5);
             CountryName = name;
             CountryVisa = visa;
         }

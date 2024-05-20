@@ -8,11 +8,11 @@ namespace HomeWork_19_1_LINQ
 {
     public class Contract // Договор
     {
-        public int TourNumberID { get; private set; } // номер тура
+        public string TourNumberID { get; private set; } // номер тура
         public DateTime ContractPaymentDeadLine { get; private set; } // Срок Оплаты
-        public int UserID { get; private set; } // Id клиента
-        public int ContractNumberID { get; private set; } // номер договора
-        public int EmployeeID { get; private set; } // id сотрудника
+        public string UserID { get; private set; } // Id клиента
+        public string ContractNumberID { get; private set; } // номер договора
+        public string EmployeeID { get; private set; } // id сотрудника
         public DateTime ContractDate { get; private set; } // дата заключения контракта
         public double ContractAmount { get; private set; } // сумма контракта
         public DateTime ContractDatePayment {  get; private set; } // дата платежа
@@ -22,7 +22,7 @@ namespace HomeWork_19_1_LINQ
             TourNumberID = tour.TourID;
             ContractPaymentDeadLine = contractPaymentDeadLine;
             UserID = client.UserID;
-            ContractNumberID = IDGenerator.GenerateNumberID(5);
+            ContractNumberID = IDGenerator.GenerateStringID(5);
             EmployeeID = employee.UserID;
             ContractDate = contractDate;
             ContractAmount = contractAmount;

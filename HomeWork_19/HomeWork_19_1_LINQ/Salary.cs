@@ -8,7 +8,7 @@ namespace HomeWork_19_1_LINQ
 {
     public class Salary // Заработная плата
     {
-        public int EmployeeID { get; private set; } // ID сотрудника или пользователя
+        public string EmployeeID { get; private set; } // ID сотрудника или пользователя
 
         public double EmployeeMoney; // значение зп
         public DateTime dateTimeSalary {  get; private set; } // дата 

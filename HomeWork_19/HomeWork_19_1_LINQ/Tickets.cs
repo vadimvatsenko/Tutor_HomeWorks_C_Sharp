@@ -9,8 +9,8 @@ namespace HomeWork_19_1_LINQ
     public class Tickets
     {
         public DateTime InsuranceDateTime {  get; private set; } // дата составления заявки
-        public int NubmerInsuranceID { get; private set; } // номер страховки
-        public int TicketNumber { get; private set; }
+        public string NubmerInsuranceID { get; private set; } // номер страховки
+        public string TicketNumber { get; private set; }
         public DateTime OutDate { get; private set; }
 
         public Tickets(DateTime insuranceDateTime, Insurance insurance, DateTime outDate)
@@ -18,7 +18,7 @@ namespace HomeWork_19_1_LINQ
 
             InsuranceDateTime = insuranceDateTime;
             NubmerInsuranceID = insurance.InsuranceNumberID;
-            TicketNumber = IDGenerator.GenerateNumberID(15);
+            TicketNumber = IDGenerator.GenerateStringID(15);
             OutDate = outDate;
         }
 

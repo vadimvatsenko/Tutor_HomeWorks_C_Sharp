@@ -9,8 +9,8 @@ namespace HomeWork_19_1_LINQ
 {
     public class Insurance // страховка
     {
-        public int InsuranceNumberID { get; private set; } // номер id страховки
-        public int UserID { get; private set; } // id клиента
+        public string InsuranceNumberID { get; private set; } // номер id страховки
+        public string UserID { get; private set; } // id клиента
         public string CompanyName { get; private set; } // название компании
         public DateTime InsuranceValidity {  get; private set; } // срок действия
         public double SumInsured { get; private set; } // страховая сумма
@@ -18,7 +18,7 @@ namespace HomeWork_19_1_LINQ
 
         public Insurance(User user, string companyName, DateTime insuranceValidity, double sumInsured, DateTime insuranceIssueDate) 
         {
-            InsuranceNumberID = IDGenerator.GenerateNumberID(2);
+            InsuranceNumberID = IDGenerator.GenerateStringID(8);
             UserID = user.UserID;
             CompanyName = companyName;
             InsuranceValidity = insuranceValidity;

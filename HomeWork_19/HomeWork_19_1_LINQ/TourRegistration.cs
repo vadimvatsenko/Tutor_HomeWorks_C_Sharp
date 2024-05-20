@@ -15,12 +15,12 @@ namespace HomeWork_19_1_LINQ
         Train,
         Ship
     }
-    public class TourRegistration
+    public class TourRegistration // Оформления тура
     {
         public Transport TransportForArrival { get; private set; } // вид транспорта для прибытия
         public Transport TransportForExcursions { get; private set; } // вид транспорта для экскурсий 
         public DateTime ValidyTour { get; private set; } // период действия тура
-        public int TourRegistrationNumberID { get; private set; } // номер тура ID
+        public string TourRegistrationNumberID { get; private set; } // номер тура ID        
         public string TourRegistrationName { get; private set; } // название тура
         public string TourRegistrationDescr { get; private set; } // описание тура
         public double TourRegistrationPrice { get; private set; } // цена тура
@@ -33,7 +33,7 @@ namespace HomeWork_19_1_LINQ
                                 DateTime validyTour, 
                                 double tourRegistrationPrice)
         {
-            TourRegistrationNumberID = IDGenerator.GenerateNumberID(7);
+            TourRegistrationNumberID = IDGenerator.GenerateStringID(7);
             TransportForArrival = transportForArrival;
             TransportForExcursions = transportForExcursions;
             ValidyTour = validyTour;
