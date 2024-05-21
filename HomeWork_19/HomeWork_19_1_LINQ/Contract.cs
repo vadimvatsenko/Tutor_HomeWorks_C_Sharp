@@ -8,7 +8,7 @@ namespace HomeWork_19_1_LINQ
 {
     public class Contract // Договор
     {
-        public string TourNumberID { get; private set; } // номер тура
+        public string TourRegNumberID { get; private set; } // номер тура
         public DateTime ContractPaymentDeadLine { get; private set; } // Срок Оплаты
         public string UserID { get; private set; } // Id клиента
         public string ContractNumberID { get; private set; } // номер договора
@@ -17,9 +17,9 @@ namespace HomeWork_19_1_LINQ
         public double ContractAmount { get; private set; } // сумма контракта
         public DateTime ContractDatePayment {  get; private set; } // дата платежа
 
-        public Contract(Tour tour, DateTime contractPaymentDeadLine, User client, User employee, DateTime contractDate, double contractAmount, DateTime contractDatePayment)
+        public Contract(TourRegistration tourRegistration, DateTime contractPaymentDeadLine, User client, User employee, DateTime contractDate, double contractAmount, DateTime contractDatePayment)
         {
-            TourNumberID = tour.TourID;
+            TourRegNumberID = tourRegistration.TourRegistrationNumberID;
             ContractPaymentDeadLine = contractPaymentDeadLine;
             UserID = client.UserID;
             ContractNumberID = IDGenerator.GenerateStringID(5);
@@ -31,7 +31,7 @@ namespace HomeWork_19_1_LINQ
 
         public void Print()
         {
-            Console.WriteLine($"TourNumberID: {TourNumberID}, \n" +
+            Console.WriteLine($"TourRegNumberID: {TourRegNumberID}, \n" +
                 $"ContractPaymentDeadLine: {ContractPaymentDeadLine}, \n" +
                 $"UserID: {UserID}, \n" +
                 $"ContractNumberID: {ContractNumberID}, \n" +

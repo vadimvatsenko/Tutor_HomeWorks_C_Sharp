@@ -180,44 +180,64 @@ namespace HomeWork_19_1_LINQ
             }; // заявка на билет
             List<Contract> contractsList = new List<Contract>()
             {
-                new Contract(toursList[0], new DateTime(2024, 5, 15), usersList[0], usersList[10], new DateTime(2024, 5, 3), 100, new DateTime(2024, 5, 13)),
-                new Contract(toursList[5], new DateTime(2024, 5, 18), usersList[1], usersList[10], new DateTime(2024, 5, 4), 150, new DateTime(2024, 5, 15)),
-                new Contract(toursList[11], new DateTime(2024, 5, 10), usersList[2], usersList[10], new DateTime(2024, 5, 7), 90, new DateTime(2024, 5, 8)),
-                new Contract(toursList[15], new DateTime(2024, 5, 6), usersList[3], usersList[11], new DateTime(2024, 5, 3), 140, new DateTime(2024, 5, 3)),
-                new Contract(toursList[2], new DateTime(2024, 5, 5), usersList[4], usersList[12], new DateTime(2024, 5, 2), 200, new DateTime(2024, 5, 3)),
-                new Contract(toursList[6], new DateTime(2024, 5, 4), usersList[5], usersList[13], new DateTime(2024, 5, 1), 220, new DateTime(2024, 5, 3)),
-                new Contract(toursList[25], new DateTime(2024, 5, 13), usersList[6], usersList[14], new DateTime(2024, 5, 11), 110, new DateTime(2024, 5, 13)),
-                new Contract(toursList[30], new DateTime(2024, 5, 20), usersList[7], usersList[14], new DateTime(2024, 5, 12), 60, new DateTime(2024, 5, 17)),
-                new Contract(toursList[12], new DateTime(2024, 5, 13), usersList[8], usersList[13], new DateTime(2024, 5, 9), 50, new DateTime(2024, 5, 10)),
-                new Contract(toursList[19], new DateTime(2024, 5, 9), usersList[9], usersList[11], new DateTime(2024, 5, 5), 95, new DateTime(2024, 5, 7)),
+                new Contract(tourRegistrationsList[0], new DateTime(2024, 5, 15), usersList[0], usersList[10], new DateTime(2024, 5, 3), 100, new DateTime(2024, 5, 13)),
+                new Contract(tourRegistrationsList[0], new DateTime(2024, 5, 15), usersList[0], usersList[10], new DateTime(2024, 5, 3), 100, new DateTime(2024, 5, 13)),
+                new Contract(tourRegistrationsList[0], new DateTime(2024, 5, 15), usersList[0], usersList[10], new DateTime(2024, 5, 3), 100, new DateTime(2024, 5, 13)),
+                new Contract(tourRegistrationsList[5], new DateTime(2024, 5, 18), usersList[1], usersList[10], new DateTime(2024, 5, 4), 150, new DateTime(2024, 5, 15)),
+                new Contract(tourRegistrationsList[5], new DateTime(2024, 5, 18), usersList[1], usersList[10], new DateTime(2024, 5, 4), 150, new DateTime(2024, 5, 15)),
+                new Contract(tourRegistrationsList[11], new DateTime(2024, 5, 10), usersList[2], usersList[10], new DateTime(2024, 5, 7), 90, new DateTime(2024, 5, 8)),
+                new Contract(tourRegistrationsList[11], new DateTime(2024, 5, 10), usersList[2], usersList[10], new DateTime(2024, 5, 7), 90, new DateTime(2024, 5, 8)),
+                new Contract(tourRegistrationsList[15], new DateTime(2024, 5, 6), usersList[3], usersList[11], new DateTime(2024, 5, 3), 140, new DateTime(2024, 5, 3)),
+                new Contract(tourRegistrationsList[2], new DateTime(2024, 5, 5), usersList[4], usersList[12], new DateTime(2024, 5, 2), 200, new DateTime(2024, 5, 3)),
+                new Contract(tourRegistrationsList[2], new DateTime(2024, 5, 5), usersList[4], usersList[12], new DateTime(2024, 5, 2), 200, new DateTime(2024, 5, 3)),
+                new Contract(tourRegistrationsList[2], new DateTime(2024, 5, 5), usersList[4], usersList[12], new DateTime(2024, 5, 2), 200, new DateTime(2024, 5, 3)),
+                new Contract(tourRegistrationsList[2], new DateTime(2024, 5, 5), usersList[4], usersList[12], new DateTime(2024, 5, 2), 200, new DateTime(2024, 5, 3)),
+                new Contract(tourRegistrationsList[2], new DateTime(2024, 5, 5), usersList[4], usersList[12], new DateTime(2024, 5, 2), 200, new DateTime(2024, 5, 3)),
+                new Contract(tourRegistrationsList[6], new DateTime(2024, 5, 4), usersList[5], usersList[13], new DateTime(2024, 5, 1), 220, new DateTime(2024, 5, 3)),
+                new Contract(tourRegistrationsList[25], new DateTime(2024, 5, 13), usersList[6], usersList[14], new DateTime(2024, 5, 11), 110, new DateTime(2024, 5, 13)),
+                new Contract(tourRegistrationsList[30], new DateTime(2024, 5, 20), usersList[7], usersList[14], new DateTime(2024, 5, 12), 60, new DateTime(2024, 5, 17)),
+                new Contract(tourRegistrationsList[30], new DateTime(2024, 5, 20), usersList[7], usersList[14], new DateTime(2024, 5, 12), 60, new DateTime(2024, 5, 17)),
+                new Contract(tourRegistrationsList[30], new DateTime(2024, 5, 20), usersList[7], usersList[14], new DateTime(2024, 5, 12), 60, new DateTime(2024, 5, 17)),
+                new Contract(tourRegistrationsList[12], new DateTime(2024, 5, 13), usersList[8], usersList[13], new DateTime(2024, 5, 9), 50, new DateTime(2024, 5, 10)),
+                new Contract(tourRegistrationsList[19], new DateTime(2024, 5, 9), usersList[9], usersList[11], new DateTime(2024, 5, 5), 95, new DateTime(2024, 5, 7)),
+                new Contract(tourRegistrationsList[19], new DateTime(2024, 5, 9), usersList[9], usersList[11], new DateTime(2024, 5, 5), 95, new DateTime(2024, 5, 7)),
+                new Contract(tourRegistrationsList[19], new DateTime(2024, 5, 9), usersList[9], usersList[11], new DateTime(2024, 5, 5), 95, new DateTime(2024, 5, 7)),
+
+                new Contract(tourRegistrationsList[0], new DateTime(2024, 5, 9), usersList[9], usersList[11], new DateTime(2024, 5, 5), 95, new DateTime(2024, 5, 7)),
             };
 
             #region
             //1. Получить перечень городов из массива типа Location, айди содержит 5 и названия городов должны начинаться с буквы M
+            Console.WriteLine("HomeWork: 1");
+            Console.WriteLine();
             var sortCities = from l in locationsList
                              join c in cityList on l.CityID equals c.CitiID
                              where c.CitiID.Contains("5") && c.CitiName.StartsWith("M")
                              select c;
-
-            /*foreach (var city in sortCities)
+            Console.WriteLine("-Операторы-");
+            foreach (var city in sortCities)
             {
                 city.Print();
-            }*/
+            }
+            Console.WriteLine();
             var sortCities2 = locationsList.Join(cityList,
                               l => l.CityID,
                               c => c.CitiID,
                               (l, c) => new { l, c })
                               .Where(x => x.c.CitiID.Contains("5") && x.c.CitiName.StartsWith("M"));
 
-
-            /*foreach (var city in sortCities2)
+            Console.WriteLine("-Методы расширения-");
+            foreach (var city in sortCities2)
             {
                 Console.WriteLine($"{city.c.CitiName}, {city.c.CitiID}");
-            }*/
+            }
+            Console.WriteLine();
             #endregion
             #region
             //2. Получить ранжированный список пользователей с именем и фамилией, зарплата которых не больше 15000 и дата полученный больше чем 12.04.2024
             //3. Дополнить второе задание и получить список зарплат и увеличить каждую зарплату на 20% и вывести данные в формате Name Surname : Salary
+            Console.WriteLine("HomeWork: 2,3");
+            Console.WriteLine();
             var sortEployees = from u in usersList
                                join s in employeeSalariesList on u.UserID equals s.EmployeeID
                                orderby u.SecondName
@@ -231,74 +251,112 @@ namespace HomeWork_19_1_LINQ
                                    Date = s.dateTimeSalary,
                                };
 
-
-            /*foreach (var u in sortEployees)
+            Console.WriteLine("-Операторы-");
+            foreach (var u in sortEployees)
             {
                 Console.WriteLine($"Name: {u.UName}, SecondName: {u.USecondName}, \n" +
                     $"Salary: {u.Salary}$, \n" +
                     $"Salary + 20%: {u.Salary20}$, \n" +
                     $"Salary Date: {u.Date}");
                 Console.WriteLine();
-            }*/
+            }
+            
             var sortEployees1 = usersList.Join(employeeSalariesList,
                                     u => u.UserID,
                                     e => e.EmployeeID,
                                     (u, e) => new { Name = u.FirstName, SecondName = u.SecondName, Sal = e.EmployeeMoney, Sal20 = e.EmployeeMoney * 1.2, Date = e.dateTimeSalary })
                                     .Where(e => e.Sal < 15000 && e.Date > new DateTime(2024, 4, 12));
-
-            /*foreach(var s in sortEployees1)
+            Console.WriteLine("-Методы расширения-");
+            foreach (var s in sortEployees1)
             {
                 Console.WriteLine($"Name: {s.Name}, SecondName: {s.SecondName}, \n" +
                     $"Salary: {s.Sal}$, \n" +
                     $"Salary + 20%: {s.Sal20}$, \n" +
                     $"Salary Date: {s.Date}");
                 Console.WriteLine();
-            }*/
+            }
 
             #endregion
             #region
 
             //4. Получить перечень туров, ранжированных по количеству посещаемых стран. // 2ва 
-            var tourLocationList = from t in tourRegistrationsList // оформление тура
-                                   join tl in toursList on t.TourRegistrationNumberID equals tl.TourNumberRegID // тур-локация
-                                   join l in locationsList on tl.LocationID equals l.LocationID
-                                   group l by t.TourRegistrationName into g
-                                   orderby g.Key
-                                   select new
-                                   {
-                                       KeyN = g.Key,
-                                       Name = g,
-                                       Count = g.Select(p => p.CountryID).Count(),
-                                   };
+            Console.WriteLine("HomeWork: 4");
+            var tourLocationList = (from t in tourRegistrationsList // оформление тура
+                                    join tl in toursList on t.TourRegistrationNumberID equals tl.TourNumberRegID // тур-локация
+                                    join l in locationsList on tl.LocationID equals l.LocationID
+                                    group l by t.TourRegistrationName into g
 
-            /*foreach (var s in tourLocationList)
+                                    select new
+                                    {
+                                        KeyN = g.Key,
+                                        Name = g,
+                                        Count = g.Select(p => p.CountryID).Count(),
+                                    }).OrderByDescending(d => d.Count);
+
+            foreach (var s in tourLocationList)
             {
                 Console.WriteLine(s.KeyN + ": " + s.Count);
-            }*/
-
-            var locCountAndCity = from l in locationsList
-                                  join c in countryList on l.CountryID equals c.CountryId
-                                  join s in cityList on l.CityID equals s.CitiID
-                                  
-
-            foreach ( var loc in locCountAndCity)
-            {
-                Console.WriteLine(loc.CountryName);
-                Console.WriteLine();
             }
 
+            /*var locCountAndCity = from l in locationsList
+                                  join c in countryList on l.CountryID equals c.CountryId
+                                  join s in cityList on l.CityID equals s.CitiID*/
 
-                                  
+
+            /* foreach ( var loc in locCountAndCity)
+             {
+                 Console.WriteLine(loc.CountryName);
+                 Console.WriteLine();
+             }*/
+
+
+
 
 
 
             #endregion
             //5. Получить ранжированный список стран по посещаемости(количеству договоров)
+            Console.WriteLine("HomeWork: 5");
+            #region
+            Console.WriteLine();
+            var sortCountries1 = (from c in contractsList
+                                 join tr in tourRegistrationsList on c.TourRegNumberID equals tr.TourRegistrationNumberID
+                                 join t in toursList on tr.TourRegistrationNumberID equals t.TourNumberRegID
+                                 join l in locationsList on t.LocationID equals l.LocationID
+                                 join con in countryList on l.CountryID equals con.CountryId
+                                 group c by con.CountryName into g                                 
+                                 select new
+                                 {
+                                     Name = g.Key,
+                                     Count = g.Count()
+                                 }).OrderByDescending(d => d.Count);
+
+
+            foreach (var s in sortCountries1)
+            {
+                Console.WriteLine(s.Name + " " + s.Count);
+            }
+
+            #endregion
             //6. Получить список пользователей, побывавших абсолютно во всех странах
+            Console.WriteLine("HomeWork: 6");
+            var sortUsers = (from u in usersList
+                            join c in contractsList on u.UserID equals c.UserID
+                            join t in toursList on c.TourRegNumberID equals t.TourNumberRegID
+                            join l in locationsList on t.LocationID equals l.LocationID
+                            join con in countryList on l.CountryID equals con.CountryId
+                            group u by u.FirstName into g
+                            //where g.Count()
+                            select new
+                            {
+                                Name = g.Key
+
+                            }).Where()
+                             
             //7. Посчитать доход от конкретного тура (на ваше усмотрение) по всем заказавшим его клиентам
             //8. Получить список клиентов, отправляющихся в поездку в период от 01.04.2024 до 07.04.2024
             //9. Для конкретного пользователя (на ваше усмотрение) получить список стан, городов, вида транспорта и страховой компании с указанием что есть что
-            //10.Получить список всех туров, продолжительность которых равна менее чем 60 дней и снизить их стоимость на процент равный продолжительности
+            //10.Получить список всех туров, продолжительность которых равна менее чем 60 дней и снизить их стоимость на процент равный продолжительности                      
 
 
         }
