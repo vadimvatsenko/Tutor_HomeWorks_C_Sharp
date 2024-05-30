@@ -409,7 +409,7 @@ namespace HomeWork_19_1_LINQ
             #region
             Console.WriteLine("HomeWork: 6");
             Console.WriteLine("-Операторы-");
-            var sortUsers = from u in usersList
+            var sortUsers = (from u in usersList
                             join c in contractsList on u.UserID equals c.UserID
                             join t in toursList on c.TourRegNumberID equals t.TourNumberRegID
                             join l in locationsList on t.LocationID equals l.LocationID
@@ -419,7 +419,7 @@ namespace HomeWork_19_1_LINQ
                                 Country = con.CountryName,
                                 Name = ($"{u.FirstName} {u.SecondName}"),
 
-                            };
+                            });
                              
 
             foreach (var s in sortUsers)
@@ -438,17 +438,19 @@ namespace HomeWork_19_1_LINQ
                              join c in contractsList on u.UserID equals c.UserID
                              join t in tourRegistrationsList on c.TourRegNumberID equals t.TourRegistrationNumberID
                              where t.TourRegistrationName == "City Lights Tour"
-                             group t by new { u.FirstName, u.SecondName, t.TourRegistrationName } into g // можно записать в g целый новый объект
+                             
+                             group t by t.TourRegistrationName  into g // можно записать в g целый новый объект
                              select new
                              {
-                                 Name = $"{g.Key.FirstName} {g.Key.SecondName}",
-                                 Tour = g.Key.TourRegistrationName,
+                                 //Name = $"{g.Key.FirstName} {g.Key.SecondName}",
+                                 //Tour = g.Key.TourRegistrationName,
+                                 Name = g.Key,
                                  TotalPrice = g.Sum(x => x.TourRegistrationPrice),
                              };
 
             foreach (var s in tourIncome)
             {
-                Console.WriteLine($"{s.Name} - {s.Tour} - {s.TotalPrice}");                
+                Console.WriteLine($"{s.Name} - {s.TotalPrice}");                
             }
             Console.WriteLine("==========");
             Console.WriteLine();
@@ -461,10 +463,15 @@ namespace HomeWork_19_1_LINQ
                                join i in insurancesList on u.UserID equals i.UserID
                                join tl in ticketsList on i.InsuranceNumberID equals tl.NubmerInsuranceID
                                where tl.OutDate >= new DateTime(2024, 4, 01) && tl.OutDate <= new DateTime(2024, 4, 07)
-                               select u;
+                               group u by new { u.FirstName, u.SecondName } into g
+                               select new
+                               {
+                                   Name = $"{g.Key.FirstName} {g.Key.SecondName}"
+                               };
+
             foreach (var s in userVication)
             {
-                Console.WriteLine($"user: {s.FirstName} {s.SecondName}");
+                Console.WriteLine($"user: {s.Name}");
             }
             Console.WriteLine("-Методы расширения-");
 
@@ -476,11 +483,14 @@ namespace HomeWork_19_1_LINQ
                 ui => ui.i.InsuranceNumberID,
                 tl => tl.NubmerInsuranceID,
                 (ui, tl) => new { ui.u, ui.i, tl }).Where(x => x.tl.OutDate >= new DateTime(2024, 4, 01) && x.tl.OutDate <= new DateTime(2024, 4, 07))
-                .Select(x => new { x.u.FirstName, x.u.SecondName });
+                .Select(x => new {x.u.FirstName, x.u.SecondName })
+                .Distinct();
 
             foreach (var s in userVication1)
             {
-                Console.WriteLine($"user: {s.FirstName} {s.SecondName}");
+              
+                    Console.WriteLine($"name {s.FirstName} {s.SecondName}");
+                
             }
 
             Console.WriteLine("==========");
@@ -491,30 +501,44 @@ namespace HomeWork_19_1_LINQ
             #region
             Console.WriteLine("HomeWork: 9");
             Console.WriteLine("-Операторы-");
-            var userInfo = from u in usersList
-                           join c in contractsList on u.UserID equals c.UserID
-                           join i in insurancesList on u.UserID equals i.UserID
-                           join tr in tourRegistrationsList on c.TourRegNumberID equals tr.TourRegistrationNumberID
-                           join t in toursList on tr.TourRegistrationNumberID equals t.TourNumberRegID
-                           join l in locationsList on t.LocationID equals l.LocationID
-                           join ci in cityList on l.CityID equals ci.CitiID
-                           join co in countryList on l.CountryID equals co.CountryId
-                           where u.SecondName == "Williams"
+            var userInfo = (from u in usersList
+                            join c in contractsList on u.UserID equals c.UserID
+                            join i in insurancesList on u.UserID equals i.UserID
+                            join tr in tourRegistrationsList on c.TourRegNumberID equals tr.TourRegistrationNumberID
+                            join t in toursList on tr.TourRegistrationNumberID equals t.TourNumberRegID
+                            join l in locationsList on t.LocationID equals l.LocationID
+                            join ci in cityList on l.CityID equals ci.CitiID
+                            join co in countryList on l.CountryID equals co.CountryId
+                            where u.SecondName == "Williams"
+                            group new { co, ci, i, tr } by new { u.FirstName, u.SecondName } into g
+                            select new
+                            {
+                                Name = $"{g.Key.FirstName} {g.Key.SecondName}",
+                                Country = g.Select(x => x.co.CountryName),
+                                City = g.Select(x => x.ci.CitiName),
+                                Transport = g.Select(x => x.tr.TransportForArrival),
+                                Insurance = g.Select(x => x.i.CompanyName),
 
-                           select new
-                           {
-                               Name = $"{u.FirstName} {u.SecondName}",
-                               Country = co.CountryName,
-                               City = ci.CitiName,
-                               Transport = tr.TransportForArrival.ToString(),
-                               Insurance = i.CompanyName,
+                            });
 
-                           };
             // Как сгруппировать??
 
             foreach (var s in userInfo)
             {
-                Console.WriteLine($"Name: {s.Name}, Country: {s.Country}, City: {s.City}, Transport: {s.Transport}, Insurance: {s.Insurance} ");
+                //Console.WriteLine($"Name: {s.Name}, Country: {s.Country}, City: {s.City}, Transport: {s.Transport}, Insurance: {s.Insurance} ");
+                Console.WriteLine(s.Name);
+                foreach (var c in s.Country)
+                {
+                    Console.WriteLine(c);
+                }
+                foreach (var cit in s.City)
+                {
+                    Console.WriteLine(cit);
+                }
+                foreach (var ins in s.Insurance)
+                {
+                    Console.WriteLine(ins);
+                }
             }
             Console.WriteLine("-Методы расширения-");
             Console.WriteLine("==========");
