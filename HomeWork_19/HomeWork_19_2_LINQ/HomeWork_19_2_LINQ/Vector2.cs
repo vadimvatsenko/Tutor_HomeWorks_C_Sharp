@@ -11,8 +11,6 @@ namespace HomeWork_19_2_LINQ
         public double x {  get; private set; }
         public double y {  get; private set; }
 
-
-
         public Vector2(double x, double y)
         {
             this.x = x;
@@ -26,6 +24,11 @@ namespace HomeWork_19_2_LINQ
         public static Vector2 operator +(Vector2 a, Vector2 b)
         {
             return new Vector2(a.x + b.x, a.y + b.y);
+        }
+
+        public static Vector2 operator +(Vector2 a, double b)
+        {
+            return new Vector2(a.x + b, a.y + b);
         }
 
         public static Vector2 operator *(Vector2 direction, double b)

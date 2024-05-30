@@ -15,26 +15,40 @@ public class DrawLineBresenham
             ConsoleKeyInfo keyInfo = Console.ReadKey();
             Console.Clear();
 
-            List<Circle> circles = new List<Circle>()
+            List<Circle> circles = new List<Circle>(10);
+            
+            for (int i = 0; i < circles.Capacity; i++)
             {
-                new Circle(ConsoleColor.Green, '%', new Vector2(rnd.Next(radius, Console.WindowWidth - radius), rnd.Next(radius, Console.WindowHeight - radius))),
-                new Circle(ConsoleColor.Yellow, '#', new Vector2(rnd.Next(radius, Console.WindowWidth - radius), rnd.Next(radius, Console.WindowHeight - radius))),
-                new Circle(ConsoleColor.Yellow, '#', new Vector2(rnd.Next(radius, Console.WindowWidth - radius), rnd.Next(radius, Console.WindowHeight - radius))),
-                new Circle(ConsoleColor.Yellow, '#', new Vector2(rnd.Next(radius, Console.WindowWidth - radius), rnd.Next(radius, Console.WindowHeight - radius))),
-                new Circle(ConsoleColor.Yellow, '#', new Vector2(rnd.Next(radius, Console.WindowWidth - radius), rnd.Next(radius, Console.WindowHeight - radius))),
-                new Circle(ConsoleColor.Yellow, '#', new Vector2(rnd.Next(radius, Console.WindowWidth - radius), rnd.Next(radius, Console.WindowHeight - radius))),
-            };
+                Vector2 position;
+                bool positionIsValid;
 
-            List<Line> lines = new List<Line>()
+                do
+                {
+                    position = new Vector2(rnd.Next(radius, Console.WindowWidth - radius), rnd.Next(radius, Console.WindowHeight - radius));
+                    positionIsValid = true;
+
+                    foreach (var circle in circles)
+                    {
+                        if (Vector2.Distance(position, circle.startPosition) < radius * 2)
+                        {
+                            positionIsValid = false;
+                            break;
+                        }
+                    }
+
+                } while (!positionIsValid);
+
+                Circle newCircle = new Circle(i == 0? ConsoleColor.Green: ConsoleColor.Yellow, i == 0 ? '%': '#', position);
+                circles.Add(newCircle);
+            }
+
+            List<Line> lines = new List<Line>(circles.Count - 1);
+            
+            for (int i = 1; i < circles.Count; i++) 
             {
-                new Line(ConsoleColor.Red, '-', circles[0].startPosition, circles[1].startPosition),
-                new Line(ConsoleColor.Red, '-', circles[0].startPosition, circles[2].startPosition),
-                new Line(ConsoleColor.Red, '-', circles[0].startPosition, circles[3].startPosition),
-                new Line(ConsoleColor.Red, '-', circles[0].startPosition, circles[4].startPosition),
-                new Line(ConsoleColor.Red, '-', circles[0].startPosition, circles[5].startPosition),
-
-            };
-
+                lines.Add(new Line(ConsoleColor.Red, '-', circles[0].startPosition, circles[i].startPosition));
+            }
+          
             var sortLines = lines.OrderByDescending(l => Vector2.Distance(l.startPosition, l.endPosition)).ToList().Select(line => line);
 
             switch (keyInfo.Key)
@@ -54,7 +68,7 @@ public class DrawLineBresenham
             }
             Console.SetCursorPosition(0, 0);
         }
-    }
+    }    
 }
 
 

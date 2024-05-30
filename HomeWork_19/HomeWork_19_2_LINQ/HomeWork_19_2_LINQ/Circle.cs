@@ -9,6 +9,7 @@ namespace HomeWork_19_2_LINQ
     internal class Circle : Shape
     {
         public double radius { get; private set; } = 4;
+
         public Circle(ConsoleColor color, char symbol, Vector2 startPosition) : base(color, symbol, startPosition)
         {
         }
@@ -25,11 +26,7 @@ namespace HomeWork_19_2_LINQ
             }
         }
 
-        public bool Intersects(Circle other)
-        {
-            Vector2 result = this.startPosition - other.startPosition;
-            double distance = Math.Sqrt(result.x * result.x + result.y * result.y);
-            return distance < (this.radius + other.radius);
-        }
+        
+
     }
 }

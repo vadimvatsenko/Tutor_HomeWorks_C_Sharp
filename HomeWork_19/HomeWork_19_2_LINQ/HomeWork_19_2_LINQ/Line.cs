@@ -10,7 +10,7 @@ namespace HomeWork_19_2_LINQ
     public class Line: Shape
     {
         public Vector2 endPosition {  get; private set; }
-        public double speed { get; private set; } = 0.5f;
+        public double speed { get; private set; } = 0.001953125f;
         public Line(ConsoleColor color, char symbol, Vector2 startPosition, Vector2 endPosition) : base(color, symbol, startPosition)
         {
             this.endPosition = endPosition;
@@ -26,8 +26,8 @@ namespace HomeWork_19_2_LINQ
 
             double dx = Math.Abs(x1 - x0);
             double dy = Math.Abs(y1 - y0);
-            double sx = x0 < x1 ? 1 : -1;
-            double sy = y0 < y1 ? 1 : -1;
+            double sx = x0 < x1 ? 1 * speed : -1 * speed;
+            double sy = y0 < y1 ? 1 * speed : -1 * speed;
             double err = dx - dy;
 
             while (true)
@@ -50,7 +50,7 @@ namespace HomeWork_19_2_LINQ
                     err += dx;
                     y0 += sy;
                 }
-                Thread.Sleep(25);
+                //Thread.Sleep(25);
             }
         }
 
