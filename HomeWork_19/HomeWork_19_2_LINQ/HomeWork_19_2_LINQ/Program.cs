@@ -6,7 +6,7 @@ public class DrawLineBresenham
 {
     public static void Main(string[] args)
     {
-        int radius = 4;
+        int radius = Circle.Radius;
         Random rnd = new Random();
 
         while (true)
@@ -39,6 +39,7 @@ public class DrawLineBresenham
                 } while (!positionIsValid);
 
                 Circle newCircle = new Circle(i == 0? ConsoleColor.Green: ConsoleColor.Yellow, i == 0 ? '%': '#', position);
+                
                 circles.Add(newCircle);
             }
 
@@ -49,26 +50,28 @@ public class DrawLineBresenham
                 lines.Add(new Line(ConsoleColor.Red, '-', circles[0].startPosition, circles[i].startPosition));
             }
           
-            var sortLines = lines.OrderByDescending(l => Vector2.Distance(l.startPosition, l.endPosition)).ToList().Select(line => line);
+            List<Line> sortLines = lines.OrderByDescending(l => Vector2.Distance(l.startPosition, l.endPosition)).Select(line => line).ToList();
 
             switch (keyInfo.Key)
             {
                 case ConsoleKey.G:
 
-                    foreach (var c in circles)
-                    {
-                        c.Draw();
-                    }
-
-                    foreach (var l in sortLines)
-                    {
-                        l.Draw();                       
-                    }
+                    circles.ForEach(circles => circles.Draw());
+                    sortLines.ForEach(l => l.Draw());
                     break;
+                default:
+                    Console.WriteLine("Не та клавиша");
+                    continue;
+
+
+
             }
+            Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(0, 0);
         }
-    }    
+    }
+
+    
 }
 
 

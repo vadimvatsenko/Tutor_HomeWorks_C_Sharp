@@ -409,23 +409,47 @@ namespace HomeWork_19_1_LINQ
             #region
             Console.WriteLine("HomeWork: 6");
             Console.WriteLine("-Операторы-");
-            var sortUsers = (from u in usersList
+            /*var sortUsers = (from u in usersList
                             join c in contractsList on u.UserID equals c.UserID
                             join t in toursList on c.TourRegNumberID equals t.TourNumberRegID
                             join l in locationsList on t.LocationID equals l.LocationID
                             join con in countryList on l.CountryID equals con.CountryId
+                            group u by new { con.CountryName} into g
+                            where g.Count() == countryList.Count()
                             select new
                             {
-                                Country = con.CountryName,
-                                Name = ($"{u.FirstName} {u.SecondName}"),
+                                *//*Country = con.CountryName,
+                                Name = ($"{u.FirstName} {u.SecondName}"),*//*
+                                Country = g.Key,
+                                //User = $"{g.Key.FirstName} {g.Key.CountryName}",
+                                //Name = g.Key.,
 
                             });
                              
 
             foreach (var s in sortUsers)
             {
-                Console.WriteLine(s.Name + " " + s.Country);
+                Console.WriteLine(s.Country);
                 
+            }*/
+            var countryUsersVisitCount1 = from regist in tourRegistrationsList
+                                         join locationTour in toursList on regist.TourRegistrationNumberID equals locationTour.TourNumberRegID
+                                         join location in locationsList on locationTour.LocationID equals location.LocationID
+                                         join agrement in contractsList on regist.TourRegistrationNumberID equals agrement.TourRegNumberID
+                                         join user in usersList on agrement.UserID equals user.UserID
+
+                                          group regist.TourRegistrationName by user.FirstName into result
+
+                                         where result.Count() == countryList.Count()
+                                         select new
+                                         {
+                                             Name = result.Key,
+                                             Result = result.Count(),
+                                         };
+
+            foreach(var c in countryUsersVisitCount1)
+            {
+                Console.WriteLine(c.Name + ' ' + c.Result);
             }
             Console.WriteLine("==========");
             Console.WriteLine();
@@ -617,6 +641,17 @@ namespace HomeWork_19_1_LINQ
             Console.WriteLine("==========");
             Console.WriteLine();
             #endregion
+
+            string[] fruit = new string[] { "apple", "banana", "pineapple" };
+            string[] fruit1 = new string[] { "apple", "banana", "orange" };
+
+            var fruit3 = fruit.Except(fruit1);
+
+            foreach(var s in fruit3)
+            {
+                Console.WriteLine(s);
+            }
+
         }
         static List<Location> FillLocations(List<Country> countryList, List<Cities> cityList)
         {

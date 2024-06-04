@@ -253,10 +253,17 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_18_2_Events", "HomeWork_18\HomeWork_18_2_Events\HomeWork_18_2_Events.csproj", "{47D41C43-A00D-4702-8FC5-33DFCD41715F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19-LINQ", "19-LINQ", "{CD5ABD96-C783-49C8-9FFE-F0F4DD74DA48}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile2.txt = TextFile2.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_19_1_LINQ", "HomeWork_19\HomeWork_19_1_LINQ\HomeWork_19_1_LINQ.csproj", "{0E917294-4AD8-4336-BD3C-6CDC718695B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_19_2_LINQ", "HomeWork_19\HomeWork_19_2_LINQ\HomeWork_19_2_LINQ\HomeWork_19_2_LINQ.csproj", "{CD8B8C55-9A10-44FC-9D96-5C9BE0150792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_19_2_LINQ", "HomeWork_19\HomeWork_19_2_LINQ\HomeWork_19_2_LINQ\HomeWork_19_2_LINQ.csproj", "{CD8B8C55-9A10-44FC-9D96-5C9BE0150792}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Async Await", "20 - Async Await", "{4E60984E-C3A8-4A2E-A859-AA5C55E64F95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_20_1_Async_Await", "HomeWork_20\HomeWork_20_1_Async_Await\HomeWork_20_1_Async_Await.csproj", "{07449020-D7C6-4010-95AF-14A9E2B492C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -684,6 +691,10 @@ Global
 		{CD8B8C55-9A10-44FC-9D96-5C9BE0150792}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8B8C55-9A10-44FC-9D96-5C9BE0150792}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD8B8C55-9A10-44FC-9D96-5C9BE0150792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07449020-D7C6-4010-95AF-14A9E2B492C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07449020-D7C6-4010-95AF-14A9E2B492C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07449020-D7C6-4010-95AF-14A9E2B492C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07449020-D7C6-4010-95AF-14A9E2B492C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -794,6 +805,7 @@ Global
 		{47D41C43-A00D-4702-8FC5-33DFCD41715F} = {62C7A19E-E5ED-4550-AACE-EF1F5F809EB3}
 		{0E917294-4AD8-4336-BD3C-6CDC718695B6} = {CD5ABD96-C783-49C8-9FFE-F0F4DD74DA48}
 		{CD8B8C55-9A10-44FC-9D96-5C9BE0150792} = {CD5ABD96-C783-49C8-9FFE-F0F4DD74DA48}
+		{07449020-D7C6-4010-95AF-14A9E2B492C6} = {4E60984E-C3A8-4A2E-A859-AA5C55E64F95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98A17070-E902-44A9-8052-5A7DFD53B7B0}

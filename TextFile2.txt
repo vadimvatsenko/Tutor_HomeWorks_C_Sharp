@@ -1,0 +1,52 @@
+Основы LINQ 
+
+Существует несколько разновидностей LINQ:
+
+LINQ to Objects: применяется для работы с массивами и коллекциями
+
+LINQ to Entities: используется при обращении к базам данных через технологию Entity Framework
+
+LINQ to XML: применяется при работе с файлами XML
+
+LINQ to DataSet: применяется при работе с объектом DataSet
+
+Parallel LINQ (PLINQ): используется для выполнения параллельных запросов
+
+Операторы запросов LINQ - частично напоминают синтаксис запросов SQL
+Методы расширения LINQ - специальные методы расширения, которые определены для интерфейса IEnumerable
+
+Проекция данных ---
+Для проекции используется оператор select
+var names = from p in people select p.Name;
+var names = people.Select(u => u.Name);
+
+Аналогично можно создать объекты другого типа, в том числе анонимного:
+var personel = from p in people
+            select new
+            {
+                FirstName = p.Name,
+                Year = DateTime.Now.Year - p.Age
+            };
+В качестве альтернативы мы могли бы использовать метод расширения Select():
+var personel = people.Select(p => new
+{ 
+    FirstName = p.Name, 
+    Year = DateTime.Now.Year - p.Age 
+});
+
+Переменные в запросах и оператор let
+var personnel = from p in people
+               let name = $"Mr. {p.Name}"
+               let year = DateTime.Now.Year - p.Age
+               select new
+            {
+                Name = name,
+                Year = year
+            };
+
+Выборка из нескольких источников
+var enrollments = from course in courses    //  выбираем по одному курсу
+             from student in students       //  выбираем по одному студенту
+             select new { Student = student.Name, Course = course.Title};   // соединяем каждого студента с каждым курсом
+
+             111
