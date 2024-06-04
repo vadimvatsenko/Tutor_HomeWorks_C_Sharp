@@ -2,31 +2,36 @@
 
 namespace MyApp
 {
-    internal class Program
+    class Program
     {
-        async Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            Console.WriteLine("Таблица умножения");
-            Console.WriteLine("Введите число");
-
-            int numb = int.Parse(Console.ReadLine());
-
-            Console.WriteLine(MultiplicationTable(numb));
-
-
-
+            Console.WriteLine("Start");
+            
+            await foreach(var i in GenerateNumbersAsync())
+            {
+                await Task.Run(() => Print(i));
+            }
         }
-        async Task<int> MultiplicationTable(int numb)
+
+        public static void Print(int a)
         {
-            int mult = 0;
+            Console.WriteLine($"{a}^{2} = { a * a}");
+        }
+
+        public static async IAsyncEnumerable<int> GenerateNumbersAsync() // IAsyncEnumerable интерфейс который возвращает дженериковое значение.
+        {
             for (int i = 0; i < 10; i++)
             {
-                await Task.Delay(2000);
-                mult = numb * i;
+                await Task.Delay(1500); // Имитация асинхронной операции
+                yield return i; // yield - способна прерывать цикл на секунду, но не выходть с метода
             }
-
-            return mult;
         }
+
+        // 2ДЗ Круг = координаты круга и круг
+
+
+
 
     }
 }
