@@ -263,7 +263,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_19_2_LINQ", "HomeW
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Async Await", "20 - Async Await", "{4E60984E-C3A8-4A2E-A859-AA5C55E64F95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_20_1_Async_Await", "HomeWork_20\HomeWork_20_1_Async_Await\HomeWork_20_1_Async_Await.csproj", "{07449020-D7C6-4010-95AF-14A9E2B492C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_20_1_Async_Await", "HomeWork_20\HomeWork_20_1_Async_Await\HomeWork_20_1_Async_Await.csproj", "{07449020-D7C6-4010-95AF-14A9E2B492C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_20_2_Async_Await", "HomeWork_20\HomeWork_20_2_Async_Await\HomeWork_20_2_Async_Await.csproj", "{F87D5D91-99E3-4C28-B6DC-3C6B435BEDC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -695,6 +697,10 @@ Global
 		{07449020-D7C6-4010-95AF-14A9E2B492C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07449020-D7C6-4010-95AF-14A9E2B492C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07449020-D7C6-4010-95AF-14A9E2B492C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87D5D91-99E3-4C28-B6DC-3C6B435BEDC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87D5D91-99E3-4C28-B6DC-3C6B435BEDC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87D5D91-99E3-4C28-B6DC-3C6B435BEDC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87D5D91-99E3-4C28-B6DC-3C6B435BEDC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -806,6 +812,7 @@ Global
 		{0E917294-4AD8-4336-BD3C-6CDC718695B6} = {CD5ABD96-C783-49C8-9FFE-F0F4DD74DA48}
 		{CD8B8C55-9A10-44FC-9D96-5C9BE0150792} = {CD5ABD96-C783-49C8-9FFE-F0F4DD74DA48}
 		{07449020-D7C6-4010-95AF-14A9E2B492C6} = {4E60984E-C3A8-4A2E-A859-AA5C55E64F95}
+		{F87D5D91-99E3-4C28-B6DC-3C6B435BEDC2} = {4E60984E-C3A8-4A2E-A859-AA5C55E64F95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98A17070-E902-44A9-8052-5A7DFD53B7B0}
