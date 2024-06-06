@@ -21,6 +21,6 @@ namespace HomeWork_20_2_Async_Await
             this.symbol = symbol;
         }
 
-        public abstract void Draw();
+        public abstract Task Draw();
     }
 }

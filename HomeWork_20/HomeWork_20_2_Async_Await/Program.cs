@@ -6,11 +6,13 @@ namespace HomeWork_20_2_Async_Await // Note: actual namespace depends on the pro
     {
         static async Task Main(string[] args)
         {
-            Shape circles = new Circle(new Vector2(10, 10), ConsoleColor.Red, '#', 5);
+            Circle circles = new Circle(new Vector2(20, 15), ConsoleColor.Red, '#', 10);
 
-            await Task.Run(() => circles.Draw()); 
+             
+
+            await Task.Run(() => circles.Draw());
            
-            Console.SetCursorPosition(0, (int)(circles.position.y + 5f));
+            Console.SetCursorPosition(0, (int)(circles.position.y + 15f));
             Console.ForegroundColor = ConsoleColor.White;
         }
     }
