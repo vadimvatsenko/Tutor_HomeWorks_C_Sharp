@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,49 +19,51 @@ namespace HomeWork_20_2_Async_Await
 
         async public override Task Draw()
         {
-            Console.ForegroundColor = color;
-            double x = 0;
-            double y = radius;
-            double d = 3 - 2 * radius;
-
-            DrawCirclePoints((int)position.x, (int)position.y, (int)x, (int)y);
-
-            while (y >= x)
+            for (double angle = 0; angle < 359; angle++)
             {
-                x++;
+                Console.ForegroundColor = color;
+                double X = position.x + Math.Cos(angle) * radius;
+                double Y = position.y + Math.Sin(angle) * radius;
+                Console.SetCursorPosition((int)X, (int)Y);
+                await Task.Delay(50);
+                Console.Write(symbol);
 
-                if (d > 0)
-                {
-                    y--;
-                    d = d + 4 * (x - y) + 10;
-                }
-                else
-                {
-                    d = d + 4 * x + 6;
-                }
-                await Task.Delay(1000);
-                DrawCirclePoints((int)position.x, (int)position.y, (int)x, (int)y);
+                await Task.Run(() => FillDraw(X, Y));
             }
         }
 
-        private void DrawCirclePoints(int centerX, int centerY, int x, int y)
+        async public Task FillDraw(double x, double y)
         {
-            PutPixel(centerX + x, centerY + y);
-            PutPixel(centerX - x, centerY + y);
-            PutPixel(centerX + x, centerY - y);
-            PutPixel(centerX - x, centerY - y);
-            PutPixel(centerX + y, centerY + x);
-            PutPixel(centerX - y, centerY + x);
-            PutPixel(centerX + y, centerY - x);
-            PutPixel(centerX - y, centerY - x);
-        }
+            Circle fillCircle = new Circle(new Vector2(x + 50, y), ConsoleColor.Magenta, '&', 2);
 
-        private void PutPixel(int x, int y)
-        {
-            if (x >= 0 && x < Console.WindowWidth && y >= 0 && y < Console.WindowHeight)
+            Console.ForegroundColor = color;
+
+            int startX = (int)fillCircle.position.x;
+            int startY = (int)fillCircle.position.y;
+
+            Console.SetCursorPosition(startX, startY);
+
+            double step = 1.0 / fillCircle.radius;
+
+            for (double i = 0; i <= Math.PI / 2; i += step)
             {
-                Console.SetCursorPosition(x, y);
-                Console.Write(symbol);
+                int X = (int)Math.Round(fillCircle.radius * Math.Cos(i));
+                int Y = (int)Math.Round(fillCircle.radius * Math.Sin(i));
+
+
+                for (int j = startY - Y; j <= startY + Y; j++)
+                {
+                    Console.SetCursorPosition(startX - X, j);
+                    Console.Write(fillCircle.symbol);
+                    Console.SetCursorPosition(startX + X, j);
+                    Console.Write(fillCircle.symbol);
+                }
+
+                await Task.Delay(50);
+                Console.SetCursorPosition(startX, startY + Y);
+                Console.Write(fillCircle.symbol);
+                Console.SetCursorPosition(startX, startY - Y);
+                Console.Write(fillCircle.symbol);
             }
         }
     }
