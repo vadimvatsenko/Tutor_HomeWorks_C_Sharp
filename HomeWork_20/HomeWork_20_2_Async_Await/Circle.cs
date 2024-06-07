@@ -25,7 +25,7 @@ namespace HomeWork_20_2_Async_Await
                 double X = position.x + Math.Cos(angle) * radius;
                 double Y = position.y + Math.Sin(angle) * radius;
                 Console.SetCursorPosition((int)X, (int)Y);
-                await Task.Delay(50);
+                //await Task.Delay(50);
                 Console.Write(symbol);
 
                 await Task.Run(() => FillDraw(X, Y));
@@ -59,7 +59,7 @@ namespace HomeWork_20_2_Async_Await
                     Console.Write(fillCircle.symbol);
                 }
 
-                await Task.Delay(50);
+                //await Task.Delay(500);
                 Console.SetCursorPosition(startX, startY + Y);
                 Console.Write(fillCircle.symbol);
                 Console.SetCursorPosition(startX, startY - Y);
