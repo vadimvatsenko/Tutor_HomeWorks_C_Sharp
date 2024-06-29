@@ -67,7 +67,7 @@ namespace HomeWork_20_2_Async_Await
                     Console.Write(symbol);
                 }
 
-                await Task.Delay(1500);
+                await Task.Delay(200);
                 Console.SetCursorPosition(startX, startY + Y);
                 Console.Write(symbol);
                 Console.SetCursorPosition(startX, startY - Y);
